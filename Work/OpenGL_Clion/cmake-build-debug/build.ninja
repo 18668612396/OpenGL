@@ -66,7 +66,6 @@ build CMakeFiles/OpenGL_Clion.dir/main.cpp.obj: CXX_COMPILER__OpenGL_Clion_Debug
 build OpenGL_Clion.exe: CXX_EXECUTABLE_LINKER__OpenGL_Clion_Debug CMakeFiles/OpenGL_Clion.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LE:/GitHub/OpenGL/Header/glew-2.1.0/include   -LE:/GitHub/OpenGL/Header/glfw-3.3.6.bin.WIN32/include
   OBJECT_DIR = CMakeFiles\OpenGL_Clion.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
