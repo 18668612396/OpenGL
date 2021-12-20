@@ -1,6 +1,0 @@
-# ninja log v5
-2	305	6614998817948337	CMakeFiles/OpenGL_Clion.dir/main.cpp.obj	bd6851eeb5d11129
-305	388	6614998818750560	OpenGL_Clion.exe	38b7a5140f2a14f5
-0	84	6615010362917687	build.ninja	f0827f10c53ac6c9
-3	414	6615244389680351	CMakeFiles/OpenGL_Clion.dir/main.cpp.obj	365c2d42a11a4b1e
-414	504	6615244390550544	OpenGL_Clion.exe	38b7a5140f2a14f5
