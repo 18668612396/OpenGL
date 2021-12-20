@@ -1,12 +1,15 @@
 ﻿using System;
 
 
-namespace MyNamespace
+namespace Shader
 {
 
     public class Shader
     {
-        
+        public Shader(string vertexPath, string fragmentPath)
+        {
+            
+        }
     }
  
 }

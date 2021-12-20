@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = OpenGL_CSharp
-build_property.ProjectDir = D:\GitHub\OpenGL\Work\OpenGL_CSharp\OpenGL_CSharp\
+build_property.ProjectDir = E:\GitHub\OpenGL\Work\OpenGL_CSharp\OpenGL_CSharp\
