@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Reflection.Metadata;
 using OpenTK;
 using OpenTK.Graphics;
@@ -49,38 +50,17 @@ namespace OpenGL_CSharp
 
         #endregion
 
-        #region ShaderSource
-
-        private OpenTK.Graphics.ProgramHandle shaderProgram;
-
-        //定义vertexShader变量
-        private OpenTK.Graphics.ShaderHandle vertexShader;
-
-        private string vertexShaderSource =
-            @"
-                   #version 330 core
-                    layout (location = 0) in vec3 aPosition;
-                    void main()
-                    {
-                     gl_Position = vec4(aPosition, 1.0);
-                    } ";
-
-        private OpenTK.Graphics.ShaderHandle fragmentShader;
-
-        private string fragmentShaderSource =
-            @"
-                #version 330 core
-                out vec4 FragColor;
-                void main()
-                {
-                FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
-                }";
-
-        #endregion
-
+        private Shader OnShader;
+  
         //窗口开启时调用
         protected override void OnLoad()
         {
+
+
+            OnShader = new Shader("E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.vert",
+                "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.frag");
+            
+        
             //这里用的不是GL.GenVertexArrays 所以一次只是生成一个
             vao = GL.GenVertexArray(); //生成一个vao
             GL.BindVertexArray(vao); //绑定vao
@@ -99,21 +79,6 @@ namespace OpenGL_CSharp
                 BufferUsageARB.StaticDraw);
             GL.BufferData(BufferTargetARB.ArrayBuffer, vertices.Length * sizeof(float), vertices[0],
                 BufferUsageARB.StaticDraw);
-
-            //创建一个顶点着色器返还给我们定义好的Shader变量
-            vertexShader = GL.CreateShader(ShaderType.VertexShader);
-            GL.ShaderSource(vertexShader, vertexShaderSource); //将shader代码给定到vertexShader变量内
-            GL.CompileShader(vertexShader); //编译顶点着色器
-
-            //创建一个顶点着色器返还给我们定义好的Shader变量
-            fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
-            GL.ShaderSource(fragmentShader, fragmentShaderSource); //将shader代码给定到FragmentShader变量内
-            GL.CompileShader(fragmentShader); //编译顶点着色器
-
-            shaderProgram = GL.CreateProgram(); //创建Program //这个相当于渲染管线的片段或者说是插槽，里面装载了一些我们需要的shader，然后填充进渲染管线里
-            GL.AttachShader(shaderProgram, vertexShader); //添加顶点着色器到shaderProgram
-            GL.AttachShader(shaderProgram, fragmentShader); //添加片元着色器到shaderProgram
-            GL.LinkProgram(shaderProgram); //将Program填充进渲染管线内
 
             //获取顶点数据
             GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
@@ -147,7 +112,7 @@ namespace OpenGL_CSharp
         {
             GL.Clear(ClearBufferMask.ColorBufferBit); //clear缓冲区
 
-            GL.UseProgram(shaderProgram); //使用shaderProgram插入渲染管线内
+             OnShader.useShader();
             //绘制
             //第一个参数为绘制的模式，一般我们设置为三角形
             //第二个 从第几个顶点开始绘制
