@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PU0EQDIO3P39hQ9pBs7O9Y0PEA4j4ZzbHVsNJPswmYkIqzl1KL9s2aW0WbqbqBoSc1diMBMDdenEleouosgtqg==",
+  "dgSpecHash": "XW64ti+h/Z/TM1sna27U73g5HhInceWWJ0M9vqMYQDenh8AdRja6hImBPJtk22Dg+8PG2j6iMR0ZGx5LchIYzg==",
   "success": true,
   "projectFilePath": "E:\\GitHub\\OpenGL\\Work\\OpenGL_CSharp\\OpenGL_CSharp\\OpenGL_CSharp.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,8 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\opentk.redist.glfw\\3.3.0-pre20200830200122\\opentk.redist.glfw.3.3.0-pre20200830200122.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.common\\5.0.0-pre.6\\opentk.windowing.common.5.0.0-pre.6.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.desktop\\5.0.0-pre.6\\opentk.windowing.desktop.5.0.0-pre.6.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\5.0.0-pre.6\\opentk.windowing.graphicslibraryframework.5.0.0-pre.6.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\5.0.0-pre.6\\opentk.windowing.graphicslibraryframework.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512"
   ],
   "logs": [
     {

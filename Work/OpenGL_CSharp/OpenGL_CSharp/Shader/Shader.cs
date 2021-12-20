@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.IO;
 using System.Text;
 using OpenTK.Graphics.OpenGL;
@@ -23,7 +24,6 @@ namespace OpenGL_CSharp
 
         public Shader(string vertexPath, string fragmentPath)
         {
-     
             //读取顶点着色器完整内容
             var vertexSource = File.ReadAllText(vertexPath);
             //读取片元着色器完整内容
@@ -43,9 +43,41 @@ namespace OpenGL_CSharp
             GL.AttachShader(shaderProgram, vertexShader); //添加顶点着色器到shaderProgram
             GL.AttachShader(shaderProgram, fragmentShader); //添加片元着色器到shaderProgram
             GL.LinkProgram(shaderProgram); //将Program填充进渲染管线内
+            
+            //获取顶点数据
+            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 8 * sizeof(float), 0);
+            GL.EnableVertexAttribArray(0);
+            //获取顶点色数据
+            GL.VertexAttribPointer(1, 3, VertexAttribPointerType.Float, false, 8 * sizeof(float), 3 * sizeof(float));
+            GL.EnableVertexAttribArray(1);
+            //获取UV数据
+            GL.VertexAttribPointer(2, 2, VertexAttribPointerType.Float, false, 8 * sizeof(float), 6 * sizeof(float));
+            GL.EnableVertexAttribArray(2);
+            
          }
 
-        public void useShader()
+        private bool disposeValue = false;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposeValue)
+            {
+                GL.DeleteProgram(shaderProgram);
+                disposeValue = true;
+            }
+        }
+
+        ~Shader()
+        {
+            GL.DeleteProgram(shaderProgram);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+ 
+        public void Use()
         {
             GL.UseProgram(shaderProgram); //使用shaderProgram插入渲染管线内
         }

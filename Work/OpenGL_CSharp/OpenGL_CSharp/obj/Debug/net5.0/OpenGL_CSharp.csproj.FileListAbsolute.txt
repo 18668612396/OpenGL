@@ -75,3 +75,4 @@ E:\GitHub\OpenGL\Work\OpenGL_CSharp\OpenGL_CSharp\bin\Debug\net5.0\ru\FSharp.Cor
 E:\GitHub\OpenGL\Work\OpenGL_CSharp\OpenGL_CSharp\bin\Debug\net5.0\tr\FSharp.Core.resources.dll
 E:\GitHub\OpenGL\Work\OpenGL_CSharp\OpenGL_CSharp\bin\Debug\net5.0\zh-Hans\FSharp.Core.resources.dll
 E:\GitHub\OpenGL\Work\OpenGL_CSharp\OpenGL_CSharp\bin\Debug\net5.0\zh-Hant\FSharp.Core.resources.dll
+E:\GitHub\OpenGL\Work\OpenGL_CSharp\OpenGL_CSharp\bin\Debug\net5.0\SixLabors.ImageSharp.dll

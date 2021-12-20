@@ -6,10 +6,9 @@ using OpenTK.Graphics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 using OpenTK.Graphics.OpenGL;
-using OpenTK.Mathematics;
-using OpenTK.Windowing.Common.Input;
-using OpenTK.Windowing.GraphicsLibraryFramework;
-
+using System.Drawing;
+using System.Drawing.Imaging;
+using PixelFormat = OpenTK.Graphics.OpenGL.PixelFormat;
 namespace OpenGL_CSharp
 {
     public partial class Game : GameWindow
@@ -18,10 +17,11 @@ namespace OpenGL_CSharp
 
         private float[] vertices =
         {
-            0.5f, 0.5f, 0.0f,   // 右上角
-            0.5f, -0.5f, 0.0f,  // 右下角
-            -0.5f, -0.5f, 0.0f, // 左下角
-            -0.5f, 0.5f, 0.0f   // 左上角
+            // positions          // colors           // texture coords
+             0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
+             0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
+            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
+            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // top left 
         };
 
         private int[] indices =
@@ -51,16 +51,12 @@ namespace OpenGL_CSharp
         #endregion
 
         private Shader OnShader;
-  
+
         //窗口开启时调用
         protected override void OnLoad()
         {
 
-
-            OnShader = new Shader("E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.vert",
-                "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.frag");
             
-        
             //这里用的不是GL.GenVertexArrays 所以一次只是生成一个
             vao = GL.GenVertexArray(); //生成一个vao
             GL.BindVertexArray(vao); //绑定vao
@@ -80,12 +76,14 @@ namespace OpenGL_CSharp
             GL.BufferData(BufferTargetARB.ArrayBuffer, vertices.Length * sizeof(float), vertices[0],
                 BufferUsageARB.StaticDraw);
 
-            //获取顶点数据
-            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
-            GL.EnableVertexAttribArray(0);
+            var vertexShaderPath = "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.vert";
+            var fragmentShaderPath = "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.frag";
+            OnShader = new Shader(vertexShaderPath,fragmentShaderPath);
+            
+     
 
             
-        
+            
             //清除后的背景颜色，我只想让他调用一次，所以放在OnLoad里使用
             GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             base.OnLoad();
@@ -94,8 +92,8 @@ namespace OpenGL_CSharp
         //窗口关闭时调用
         protected override void OnUnload()
         {
+            OnShader.Dispose();//释放ShaderProgram
             Console.WriteLine("esc");
-
             base.OnUnload();
         }
 
@@ -103,7 +101,7 @@ namespace OpenGL_CSharp
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
             GL.BindVertexArray(vao); //绑定vao
-            GL.BindBuffer(BufferTargetARB.ElementArrayBuffer,ebo);//绑定ebo
+            GL.BindBuffer(BufferTargetARB.ElementArrayBuffer, ebo); //绑定ebo
             base.OnUpdateFrame(args);
         }
 
@@ -112,13 +110,13 @@ namespace OpenGL_CSharp
         {
             GL.Clear(ClearBufferMask.ColorBufferBit); //clear缓冲区
 
-             OnShader.useShader();
+            OnShader.Use();
             //绘制
             //第一个参数为绘制的模式，一般我们设置为三角形
             //第二个 从第几个顶点开始绘制
             //第三个是绘制多少个顶点数量
             // GL.DrawArrays(PrimitiveType.Triangles, 0, 6);
-            GL.DrawElements(PrimitiveType.Triangles,6,DrawElementsType.UnsignedInt,0);
+            GL.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, 0);
             //OpenGL双缓冲
             SwapBuffers(); //https://docs.microsoft.com/zh-cn/windows/win32/opengl/drawing-with-double-buffers
             base.OnRenderFrame(args);
