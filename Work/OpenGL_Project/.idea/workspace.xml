@@ -1,43 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7d83189-2506-4ee5-ab0b-e5fc17fb3fda" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL_Clion/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-b9d41f547a8dabb8522d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/.cmake/api/v1/reply/index-2021-12-15T19-55-43-0656.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/.cmake/api/v1/reply/target-OpenGL_Clion-Debug-f7880a2e87ca18df4558.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/CMakeFiles/OpenGL_Clion.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/CMakeFiles/OpenGL_Clion.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/OpenGL_Clion.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/OpenGL_Clion.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL_Clion/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenGL_Clion/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL_Clion/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/OpenGL_Project/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/OpenGL_Project/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/OpenGL_Project/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/OpenGL_Project/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/OpenGL_Project/v16/ipch/AutoPCH/52c651f8dec0a8e2/MAIN.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/OpenGL_Project/v16/ipch/AutoPCH/52c651f8dec0a8e2/MAIN.ipch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/OpenGL_Project.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/OpenGL_Project.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/OpenGL_Project.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/OpenGL_Project.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/Main.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/CL.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/link.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/OpenGL_Project.tlog/link.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/vc142.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Debug/vc142.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/OpenGL_Project.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/OpenGL_Project.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_Project/OpenGL_Project.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_Project/OpenGL_Project.vcxproj.filters" afterDir="false" />
-    </list>
+    <list default="true" id="c7d83189-2506-4ee5-ab0b-e5fc17fb3fda" name="Changes" comment="Changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +38,10 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RunManager">
@@ -88,6 +64,7 @@
       <workItem from="1639820967664" duration="268000" />
       <workItem from="1639821258159" duration="32000" />
       <workItem from="1639821425390" duration="25000" />
+      <workItem from="1639974945038" duration="4507000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "eJJ4yl7WwZQ2Ib9010MYxZNs+QH74ZBjuZRMfUdYhjHKkzgMQlfQyoXninAitVL+HR6KkrMOEG3OYfwJ7cnsXg==",
+  "success": true,
+  "projectFilePath": "D:\\GitHub\\OpenGL\\Work\\OpenGL_CSharp\\OpenGL_CSharp\\OpenGL_CSharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\glmnet\\0.7.0\\glmnet.0.7.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk\\5.0.0-pre.6\\opentk.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.compute\\5.0.0-pre.6\\opentk.compute.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.core\\5.0.0-pre.6\\opentk.core.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.graphics\\5.0.0-pre.6\\opentk.graphics.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.input\\5.0.0-pre.6\\opentk.input.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.mathematics\\5.0.0-pre.6\\opentk.mathematics.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.openal\\5.0.0-pre.6\\opentk.openal.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.redist.glfw\\3.3.0-pre20200830200122\\opentk.redist.glfw.3.3.0-pre20200830200122.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.common\\5.0.0-pre.6\\opentk.windowing.common.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.desktop\\5.0.0-pre.6\\opentk.windowing.desktop.5.0.0-pre.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\5.0.0-pre.6\\opentk.windowing.graphicslibraryframework.5.0.0-pre.6.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GlmNet",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
