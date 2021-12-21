@@ -4,6 +4,7 @@ using System.IO;
 using System.Numerics;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
+using Vector3 = OpenTK.Mathematics.Vector3;
 
 
 namespace OpenGL_CSharp
@@ -61,13 +62,19 @@ namespace OpenGL_CSharp
             GL.VertexAttribPointer(15, 2, VertexAttribPointerType.Float, false, 8 * sizeof(float), 6 * sizeof(float));
             GL.EnableVertexAttribArray(15);
 
-            OpenTK.Mathematics.Matrix4 rotation = Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(90.0f));
-            OpenTK.Mathematics.Matrix4 scale = Matrix4.CreateScale(0.5f, 0.5f, 0.5f);
-            OpenTK.Mathematics.Matrix4 trans = rotation * scale;
+            var rotation = Matrix4d.CreateRotationZ(MathHelper.DegreesToRadians(90.0f));
+            
 
-            GL.UniformMatrix4f(GL.GetUniformLocation(shaderProgram, "Transform"), 1, true, ReadOnlySpan<float>.Empty);
+            
         }
 
+        public void OnMatrix(Shader shader,Matrix4d matrix)
+        {
+
+            GL.UniformMatrix4d(GL.GetUniformLocation(shader.shaderProgram,"trans"),true,matrix);
+            
+         
+        }
 
         protected virtual void Dispose(bool disposing)
         {
@@ -95,6 +102,7 @@ namespace OpenGL_CSharp
 
         public void Use()
         {
+
             GL.UseProgram(shaderProgram); //使用shaderProgram插入渲染管线内
         }
     }
