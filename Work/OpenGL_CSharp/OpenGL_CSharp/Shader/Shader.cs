@@ -1,7 +1,7 @@
 ﻿
 using System;
 using System.IO;
-using System.Text;
+using OpenTK;
 using OpenTK.Graphics.OpenGL;
 
 namespace OpenGL_CSharp
@@ -53,8 +53,9 @@ namespace OpenGL_CSharp
             //获取UV数据
             GL.VertexAttribPointer(2, 2, VertexAttribPointerType.Float, false, 8 * sizeof(float), 6 * sizeof(float));
             GL.EnableVertexAttribArray(2);
-            
-         }
+
+       
+        }
 
         private bool disposeValue = false;
         protected virtual void Dispose(bool disposing)

@@ -1,53 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
 using OpenTK.Graphics.OpenGL;
-
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-
-
-namespace OpenGL_CSharp.Texture
+using OpenTK.Graphics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using PixelFormat = OpenTK.Graphics.OpenGLES1.PixelFormat;
+namespace OpenGL_CSharp
 {
     public class Texture
     {
+       public readonly OpenTK.Graphics.TextureHandle texture; //定义纹理变量 生成一个空纹理
         public static Texture LoadFromFile(string path)
         {
-            int texBuffer;
+            OpenTK.Graphics.TextureHandle texture = GL.GenTexture();
+            GL.BindTexture(TextureTarget.Texture2d, texture); //绑定纹理类型
+            GL.ActiveTexture(TextureUnit.Texture0); //绑定一个纹理槽位
             
+            //LoadTexture
+            using (var image = new Bitmap(path)) //声明一个返回类型为var的变量，将引入进来的纹理给到他
+            {
+                image.RotateFlip(RotateFlipType.RotateNoneFlipY); //垂直翻转纹理
+       
+                //将位图锁定到系统中
+                var data = image.LockBits(
+                    new Rectangle(0, 0, image.Width, image.Height),
+                    ImageLockMode.ReadOnly,
+                    System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                Console.WriteLine(data);
+            }
             
-            
-            
-            
-   
-            return null;
+            GL.GenerateTextureMipmap(texture);//生成mipmap
+            Console.WriteLine("image");
+            return new Texture();
         }
-        
+
+        public void Use(TextureUnit unit)
+        {
+           GL.ActiveTexture((unit));
+           GL.BindTexture(TextureTarget.Texture2d,texture);
+        }
     }
 }
 
-
-
-
-
-
-
-
-// Image<Rgba32> image = Image.Load<Rgba32>(path);
-// image.Mutate(x=>x.Flip(FlipMode.Vertical));
-//
-// var pixels = new List<byte>(4 * image.Width * image.Height);
-//
-// for (int y = 0; y < image.Height; y++)
-// {
-//     var row = image.GetPixelRowSpan(y);
-//
-//     for (int x = 0; x < image.Width; x++)
-//     {
-//         pixels.Add(row[x].R);
-//         pixels.Add(row[x].G);
-//         pixels.Add(row[x].B);
-//         pixels.Add(row[x].A);
-//     }
-//
-// }

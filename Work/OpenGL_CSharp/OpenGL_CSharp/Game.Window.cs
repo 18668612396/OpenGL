@@ -14,7 +14,7 @@ namespace OpenGL_CSharp
         public Game() :
             base(GameWindowSettings.Default, NativeWindowSettings.Default)
         {
-            this.CenterWindow(new Vector2i(800, 600)); //重定义Window大小
+            this.CenterWindow(new Vector2i(400, 300)); //重定义Window大小
         }
         
         //调整窗口大小时调用

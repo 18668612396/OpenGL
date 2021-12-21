@@ -1,14 +1,9 @@
 ﻿using System;
-using System.IO;
-using System.Reflection.Metadata;
-using OpenTK;
-using OpenTK.Graphics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 using OpenTK.Graphics.OpenGL;
-using System.Drawing;
-using System.Drawing.Imaging;
-using PixelFormat = OpenTK.Graphics.OpenGL.PixelFormat;
+
+
 namespace OpenGL_CSharp
 {
     public partial class Game : GameWindow
@@ -52,6 +47,7 @@ namespace OpenGL_CSharp
 
         private Shader OnShader;
 
+        private Texture OnTexture;
         //窗口开启时调用
         protected override void OnLoad()
         {
@@ -76,14 +72,14 @@ namespace OpenGL_CSharp
             GL.BufferData(BufferTargetARB.ArrayBuffer, vertices.Length * sizeof(float), vertices[0],
                 BufferUsageARB.StaticDraw);
 
-            var vertexShaderPath = "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.vert";
-            var fragmentShaderPath = "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.frag";
+            var vertexShaderPath = "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.vert";
+            var fragmentShaderPath = "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.frag";
             OnShader = new Shader(vertexShaderPath,fragmentShaderPath);
-            
-     
+            // OnTexture = new Texture("D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/container.jpg");
 
-            
-            
+            OnTexture = Texture.LoadFromFile("D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/container.jpg");
+            OnTexture.Use(TextureUnit.Texture0);
+
             //清除后的背景颜色，我只想让他调用一次，所以放在OnLoad里使用
             GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             base.OnLoad();
@@ -100,8 +96,11 @@ namespace OpenGL_CSharp
         //每一帧进行调用 可用于存放一些跟着渲染一起更新的数据
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
+        
             GL.BindVertexArray(vao); //绑定vao
             GL.BindBuffer(BufferTargetARB.ElementArrayBuffer, ebo); //绑定ebo
+            OnTexture.Use(TextureUnit.Texture0);
+            OnShader.Use();
             base.OnUpdateFrame(args);
         }
 
@@ -110,7 +109,7 @@ namespace OpenGL_CSharp
         {
             GL.Clear(ClearBufferMask.ColorBufferBit); //clear缓冲区
 
-            OnShader.Use();
+
             //绘制
             //第一个参数为绘制的模式，一般我们设置为三角形
             //第二个 从第几个顶点开始绘制

@@ -7,21 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c429014c-da23-4836-9d07-d7e21b7b1e84" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpenGL_CSharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpenGL_CSharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/Shader/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/Shader/Shader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/bin/Debug/net5.0/OpenGL_CSharp.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/bin/Debug/net5.0/OpenGL_CSharp.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/bin/Debug/net5.0/OpenGL_CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/bin/Debug/net5.0/OpenGL_CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/bin/Debug/net5.0/OpenGL_CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/bin/Debug/net5.0/OpenGL_CSharp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/bin/Debug/net5.0/ref/OpenGL_CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/bin/Debug/net5.0/ref/OpenGL_CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/OpenGL_CSharp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/ref/OpenGL_CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGL_CSharp/obj/Debug/net5.0/ref/OpenGL_CSharp.dll" afterDir="false" />
-    </list>
+    <list default="true" id="c429014c-da23-4836-9d07-d7e21b7b1e84" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,9 +25,10 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29a328843bdc4762af89c8fdc084c4d68f5778/394/FileStream.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7760b7e529842eaa902ba064a8e3659ae00/83/ebe94382/GameWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7760b7e529842eaa902ba064a8e3659ae00/30/964532f6/NativeWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bc3d7024e97f4f818de53bc3c23872b48f5790/393/FileStream.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bc3d7024e97f4f818de53bc3c23872b48f5790/394/FileStream.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19fae2d4f8594cc8af6fef0181a5dc2eab578/eb/16a3e20a/ColorConverter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="22X2DCnobriA63vxtIQ6KMy9UVF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -50,7 +37,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35048753" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35026455" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -60,7 +47,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -94,6 +81,10 @@
       <workItem from="1639969495799" duration="2211000" />
       <workItem from="1639972260971" duration="10402000" />
       <workItem from="1640010125109" duration="11748000" />
+      <workItem from="1640054107161" duration="2452000" />
+      <workItem from="1640056702559" duration="2752000" />
+      <workItem from="1640059590335" duration="1213000" />
+      <workItem from="1640060844828" duration="1398000" />
     </task>
     <servers />
   </component>
@@ -113,6 +104,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -126,19 +118,6 @@
           </properties>
           <option name="timeStamp" value="7" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/OpenGL_CSharp/Shader/Shader.cs</url>
-          <line>24</line>
-          <properties documentPath="E:\GitHub\OpenGL\Work\OpenGL_CSharp\OpenGL_CSharp\Shader\Shader.cs" initialLine="24" containingFunctionPresentation="constructor 'Shader'">
-            <startOffsets>
-              <option value="493" />
-            </startOffsets>
-            <endOffsets>
-              <option value="494" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
