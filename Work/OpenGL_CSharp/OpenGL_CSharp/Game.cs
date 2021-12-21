@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Drawing;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 using OpenTK.Graphics.OpenGL;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 
 namespace OpenGL_CSharp
@@ -13,10 +16,10 @@ namespace OpenGL_CSharp
         private float[] vertices =
         {
             // positions          // colors           // texture coords
-             0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
-             0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
-            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
-            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // top left 
+            0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, // top right
+            0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, // bottom right
+            -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // bottom left
+            -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f // top left 
         };
 
         private int[] indices =
@@ -47,11 +50,32 @@ namespace OpenGL_CSharp
 
         private Shader OnShader;
 
-        private Texture OnTexture;
+        //纹理插槽声明 做成了数组
+        private OpenTK.Graphics.TextureHandle[] texture =
+        {
+            (OpenTK.Graphics.TextureHandle) 0,
+            (OpenTK.Graphics.TextureHandle) 1,
+        };
+
+        private string[] UniformName =
+        {
+              "diffuseTex"
+            , "specularTex"
+        };
+
+
         //窗口开启时调用
         protected override void OnLoad()
         {
-
+            #region Texture
+            string[] texturePath =
+            {
+                "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/container.bmp",
+                "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/Ground_01.bmp"
+            };
+            texture[0] = Texture.LoadTexture(texturePath[0], TextureUnit.Texture0);
+            texture[1] = Texture.LoadTexture(texturePath[1], TextureUnit.Texture1);
+            #endregion
             
             //这里用的不是GL.GenVertexArrays 所以一次只是生成一个
             vao = GL.GenVertexArray(); //生成一个vao
@@ -72,14 +96,10 @@ namespace OpenGL_CSharp
             GL.BufferData(BufferTargetARB.ArrayBuffer, vertices.Length * sizeof(float), vertices[0],
                 BufferUsageARB.StaticDraw);
 
-            var vertexShaderPath = "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.vert";
-            var fragmentShaderPath = "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.frag";
-            OnShader = new Shader(vertexShaderPath,fragmentShaderPath);
-            // OnTexture = new Texture("D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/container.jpg");
+            var vertexShaderPath = "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.glsl";
+            var fragmentShaderPath = "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.glsl";
 
-            OnTexture = Texture.LoadFromFile("D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/container.jpg");
-            OnTexture.Use(TextureUnit.Texture0);
-
+            OnShader = new Shader(vertexShaderPath, fragmentShaderPath);
             //清除后的背景颜色，我只想让他调用一次，所以放在OnLoad里使用
             GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             base.OnLoad();
@@ -88,7 +108,7 @@ namespace OpenGL_CSharp
         //窗口关闭时调用
         protected override void OnUnload()
         {
-            OnShader.Dispose();//释放ShaderProgram
+            OnShader.Dispose(); //释放ShaderProgram
             Console.WriteLine("esc");
             base.OnUnload();
         }
@@ -96,10 +116,19 @@ namespace OpenGL_CSharp
         //每一帧进行调用 可用于存放一些跟着渲染一起更新的数据
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
-        
+            GL.Clear(ClearBufferMask.ColorBufferBit); //clear缓冲区
+
+            // for (int i = 0; i < texture.Length; i++)
+            // {
+            //     Texture.OnUniformTexture(OnShader, texture[i], UniformName[i], i);
+            // }
+            
+            Texture.OnUniformTexture(OnShader, texture[0], UniformName[0], 0);
+            Texture.OnUniformTexture(OnShader, texture[1], UniformName[1], 1);
+
             GL.BindVertexArray(vao); //绑定vao
             GL.BindBuffer(BufferTargetARB.ElementArrayBuffer, ebo); //绑定ebo
-            OnTexture.Use(TextureUnit.Texture0);
+            
             OnShader.Use();
             base.OnUpdateFrame(args);
         }
@@ -107,9 +136,6 @@ namespace OpenGL_CSharp
         //渲染的主要入口 每一帧调用他来实现渲染循环
         protected override void OnRenderFrame(FrameEventArgs args)
         {
-            GL.Clear(ClearBufferMask.ColorBufferBit); //clear缓冲区
-
-
             //绘制
             //第一个参数为绘制的模式，一般我们设置为三角形
             //第二个 从第几个顶点开始绘制

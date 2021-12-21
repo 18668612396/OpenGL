@@ -1,34 +1,41 @@
-﻿
-using System;
+﻿using System;
+using System.Drawing.Drawing2D;
 using System.IO;
-using OpenTK;
+using System.Numerics;
 using OpenTK.Graphics.OpenGL;
+using OpenTK.Mathematics;
+
 
 namespace OpenGL_CSharp
 {
-
     public class Shader
     {
-        
         #region ShaderSource
-        
-        private OpenTK.Graphics.ProgramHandle shaderProgram;
+
+        public OpenTK.Graphics.ProgramHandle shaderProgram;
+
         //定义vertexShader变量
         private OpenTK.Graphics.ShaderHandle vertexShader;
         private OpenTK.Graphics.ShaderHandle fragmentShader;
 
-
-           
         #endregion
-        
+
 
         public Shader(string vertexPath, string fragmentPath)
         {
+            if (!File.Exists(vertexPath))
+            {
+                if (!File.Exists(fragmentPath))
+                {
+                    Console.WriteLine("shader加载失败啦！！");
+                }
+            }
+
             //读取顶点着色器完整内容
             var vertexSource = File.ReadAllText(vertexPath);
             //读取片元着色器完整内容
             var fragmentSource = File.ReadAllText(fragmentPath);
-            
+
             //创建一个顶点着色器返还给我们定义好的Shader变量
             vertexShader = GL.CreateShader(ShaderType.VertexShader);
             GL.ShaderSource(vertexShader, vertexSource); //将shader代码给定到vertexShader变量内
@@ -43,7 +50,7 @@ namespace OpenGL_CSharp
             GL.AttachShader(shaderProgram, vertexShader); //添加顶点着色器到shaderProgram
             GL.AttachShader(shaderProgram, fragmentShader); //添加片元着色器到shaderProgram
             GL.LinkProgram(shaderProgram); //将Program填充进渲染管线内
-            
+
             //获取顶点数据
             GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 8 * sizeof(float), 0);
             GL.EnableVertexAttribArray(0);
@@ -51,15 +58,21 @@ namespace OpenGL_CSharp
             GL.VertexAttribPointer(1, 3, VertexAttribPointerType.Float, false, 8 * sizeof(float), 3 * sizeof(float));
             GL.EnableVertexAttribArray(1);
             //获取UV数据
-            GL.VertexAttribPointer(2, 2, VertexAttribPointerType.Float, false, 8 * sizeof(float), 6 * sizeof(float));
-            GL.EnableVertexAttribArray(2);
+            GL.VertexAttribPointer(15, 2, VertexAttribPointerType.Float, false, 8 * sizeof(float), 6 * sizeof(float));
+            GL.EnableVertexAttribArray(15);
 
-       
+            OpenTK.Mathematics.Matrix4 rotation = Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(90.0f));
+            OpenTK.Mathematics.Matrix4 scale = Matrix4.CreateScale(0.5f, 0.5f, 0.5f);
+            OpenTK.Mathematics.Matrix4 trans = rotation * scale;
+
+            GL.UniformMatrix4f(GL.GetUniformLocation(shaderProgram, "Transform"), 1, true, ReadOnlySpan<float>.Empty);
         }
 
-        private bool disposeValue = false;
+
         protected virtual void Dispose(bool disposing)
         {
+            bool disposeValue = false;
+
             if (!disposeValue)
             {
                 GL.DeleteProgram(shaderProgram);
@@ -74,14 +87,15 @@ namespace OpenGL_CSharp
 
         public void Dispose()
         {
+            GL.DeleteShader(vertexShader);
+            GL.DeleteShader(fragmentShader);
             Dispose(true);
             GC.SuppressFinalize(this);
         }
- 
+
         public void Use()
         {
             GL.UseProgram(shaderProgram); //使用shaderProgram插入渲染管线内
         }
     }
- 
 }

@@ -2,77 +2,6 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "FSharp.Core/4.7.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/FSharp.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/FSharp.Core.dll": {}
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/FSharp.Core.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/FSharp.Core.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/FSharp.Core.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/FSharp.Core.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/FSharp.Core.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/FSharp.Core.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/FSharp.Core.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/FSharp.Core.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/FSharp.Core.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/FSharp.Core.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "GlmNet/0.7.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/GlmNet.dll": {}
-        },
-        "runtime": {
-          "lib/net40/GlmNet.dll": {}
-        }
-      },
-      "GLSLangSharp/0.4.10": {
-        "type": "package",
-        "dependencies": {
-          "FSharp.Core": "4.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/GLSLangSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/GLSLangSharp.dll": {}
-        }
-      },
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
@@ -229,15 +158,6 @@
           "lib/net5.0/OpenTK.Windowing.GraphicsLibraryFramework.dll": {}
         }
       },
-      "SixLabors.ImageSharp/1.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
-        }
-      },
       "System.Drawing.Common/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -266,77 +186,6 @@
     }
   },
   "libraries": {
-    "FSharp.Core/4.7.0": {
-      "sha512": "6Bf2qzSCaJoP6tTfO+a5muUS7QbyJANqSut73zQvwQ9It5P0ITz9VKseeia2ofco30c55EQ0jA2wf2+A2gpGnw==",
-      "type": "package",
-      "path": "fsharp.core/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "fsharp.core.4.7.0.nupkg.sha512",
-        "fsharp.core.nuspec",
-        "lib/net45/FSharp.Core.dll",
-        "lib/net45/FSharp.Core.optdata",
-        "lib/net45/FSharp.Core.sigdata",
-        "lib/net45/FSharp.Core.xml",
-        "lib/net45/cs/FSharp.Core.resources.dll",
-        "lib/net45/de/FSharp.Core.resources.dll",
-        "lib/net45/es/FSharp.Core.resources.dll",
-        "lib/net45/fr/FSharp.Core.resources.dll",
-        "lib/net45/it/FSharp.Core.resources.dll",
-        "lib/net45/ja/FSharp.Core.resources.dll",
-        "lib/net45/ko/FSharp.Core.resources.dll",
-        "lib/net45/pl/FSharp.Core.resources.dll",
-        "lib/net45/pt-BR/FSharp.Core.resources.dll",
-        "lib/net45/ru/FSharp.Core.resources.dll",
-        "lib/net45/tr/FSharp.Core.resources.dll",
-        "lib/net45/zh-Hans/FSharp.Core.resources.dll",
-        "lib/net45/zh-Hant/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/FSharp.Core.dll",
-        "lib/netstandard2.0/FSharp.Core.optdata",
-        "lib/netstandard2.0/FSharp.Core.sigdata",
-        "lib/netstandard2.0/FSharp.Core.xml",
-        "lib/netstandard2.0/cs/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/de/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/es/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/fr/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/it/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/ja/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/ko/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/pl/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/ru/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/tr/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll"
-      ]
-    },
-    "GlmNet/0.7.0": {
-      "sha512": "g3EFJOV89dWppRVT5PJ8nVYWSEIoB4yqqEZy71ryb3mfxSGrvwqxsF+XbK+J0jUgSwRIYEWHqodvtd3LchlE+w==",
-      "type": "package",
-      "path": "glmnet/0.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "glmnet.0.7.0.nupkg.sha512",
-        "glmnet.nuspec",
-        "lib/net40/GlmNet.XML",
-        "lib/net40/GlmNet.dll"
-      ]
-    },
-    "GLSLangSharp/0.4.10": {
-      "sha512": "he/xPNInhPh0c4UxBRItlOkPGDfB+HiVgHNw9C0HUg+mxw6B7+S1lt5nVDVhfa0zTu2s80wr41LTL9SLsAJxnA==",
-      "type": "package",
-      "path": "glslangsharp/0.4.10",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "glslangsharp.0.4.10.nupkg.sha512",
-        "glslangsharp.nuspec",
-        "lib/netstandard2.0/GLSLangSharp.dll",
-        "lib/netstandard2.0/GLSLangSharp.pdb"
-      ]
-    },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "sha512": "hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
       "type": "package",
@@ -519,30 +368,6 @@
         "opentk.windowing.graphicslibraryframework.nuspec"
       ]
     },
-    "SixLabors.ImageSharp/1.0.4": {
-      "sha512": "H2rPiEr2ddBOltOuqRYhpLBAsQXDAhbzMMhhuksnBG2oefup1MXMchALe7yYkKJksNbtxbZHKeM6dn/68I75qw==",
-      "type": "package",
-      "path": "sixlabors.imagesharp/1.0.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net472/SixLabors.ImageSharp.dll",
-        "lib/net472/SixLabors.ImageSharp.xml",
-        "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
-        "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
-        "lib/netcoreapp3.1/SixLabors.ImageSharp.dll",
-        "lib/netcoreapp3.1/SixLabors.ImageSharp.xml",
-        "lib/netstandard1.3/SixLabors.ImageSharp.dll",
-        "lib/netstandard1.3/SixLabors.ImageSharp.xml",
-        "lib/netstandard2.0/SixLabors.ImageSharp.dll",
-        "lib/netstandard2.0/SixLabors.ImageSharp.xml",
-        "lib/netstandard2.1/SixLabors.ImageSharp.dll",
-        "lib/netstandard2.1/SixLabors.ImageSharp.xml",
-        "sixlabors.imagesharp.1.0.4.nupkg.sha512",
-        "sixlabors.imagesharp.128.png",
-        "sixlabors.imagesharp.nuspec"
-      ]
-    },
     "System.Drawing.Common/6.0.0": {
       "sha512": "NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
       "type": "package",
@@ -585,10 +410,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "GLSLangSharp >= 0.4.10",
-      "GlmNet >= 0.7.0",
       "OpenTK >= 5.0.0-pre.6",
-      "SixLabors.ImageSharp >= 1.0.4",
       "System.Drawing.Common >= 6.0.0"
     ]
   },
@@ -629,21 +451,9 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "GLSLangSharp": {
-            "target": "Package",
-            "version": "[0.4.10, )"
-          },
-          "GlmNet": {
-            "target": "Package",
-            "version": "[0.7.0, )"
-          },
           "OpenTK": {
             "target": "Package",
             "version": "[5.0.0-pre.6, )"
-          },
-          "SixLabors.ImageSharp": {
-            "target": "Package",
-            "version": "[1.0.4, )"
           },
           "System.Drawing.Common": {
             "target": "Package",
@@ -668,17 +478,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GlmNet",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

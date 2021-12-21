@@ -11,12 +11,12 @@ namespace OpenGL_CSharp
     {
         #region CreateRenderWindow
 
-        public Game() :
+        public Game(int width,int height,string title) :
             base(GameWindowSettings.Default, NativeWindowSettings.Default)
         {
-            this.CenterWindow(new Vector2i(400, 300)); //重定义Window大小
+            
+            this.CenterWindow(new Vector2i(width, height)); //重定义Window大小
         }
-        
         //调整窗口大小时调用
         protected override void OnResize(ResizeEventArgs e)
         {

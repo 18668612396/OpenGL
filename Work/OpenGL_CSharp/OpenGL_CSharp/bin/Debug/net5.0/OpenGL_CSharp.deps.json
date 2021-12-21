@@ -8,82 +8,11 @@
     ".NETCoreApp,Version=v5.0": {
       "OpenGL_CSharp/1.0.0": {
         "dependencies": {
-          "GLSLangSharp": "0.4.10",
-          "GlmNet": "0.7.0",
           "OpenTK": "5.0.0-pre.6",
-          "SixLabors.ImageSharp": "1.0.4",
           "System.Drawing.Common": "6.0.0"
         },
         "runtime": {
           "OpenGL_CSharp.dll": {}
-        }
-      },
-      "FSharp.Core/4.7.0": {
-        "runtime": {
-          "lib/netstandard2.0/FSharp.Core.dll": {
-            "assemblyVersion": "4.7.0.0",
-            "fileVersion": "4.700.19.40208"
-          }
-        },
-        "resources": {
-          "lib/netstandard2.0/cs/FSharp.Core.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/FSharp.Core.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/FSharp.Core.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/FSharp.Core.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/FSharp.Core.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/FSharp.Core.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/FSharp.Core.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/FSharp.Core.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/FSharp.Core.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/FSharp.Core.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "GlmNet/0.7.0": {
-        "runtime": {
-          "lib/net40/GlmNet.dll": {
-            "assemblyVersion": "0.7.0.0",
-            "fileVersion": "0.7.0.0"
-          }
-        }
-      },
-      "GLSLangSharp/0.4.10": {
-        "dependencies": {
-          "FSharp.Core": "4.7.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/GLSLangSharp.dll": {
-            "assemblyVersion": "0.4.0.0",
-            "fileVersion": "0.4.0.0"
-          }
         }
       },
       "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -233,14 +162,6 @@
           }
         }
       },
-      "SixLabors.ImageSharp/1.0.4": {
-        "runtime": {
-          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.4.0"
-          }
-        }
-      },
       "System.Drawing.Common/6.0.0": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "6.0.0"
@@ -273,27 +194,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "FSharp.Core/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6Bf2qzSCaJoP6tTfO+a5muUS7QbyJANqSut73zQvwQ9It5P0ITz9VKseeia2ofco30c55EQ0jA2wf2+A2gpGnw==",
-      "path": "fsharp.core/4.7.0",
-      "hashPath": "fsharp.core.4.7.0.nupkg.sha512"
-    },
-    "GlmNet/0.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-g3EFJOV89dWppRVT5PJ8nVYWSEIoB4yqqEZy71ryb3mfxSGrvwqxsF+XbK+J0jUgSwRIYEWHqodvtd3LchlE+w==",
-      "path": "glmnet/0.7.0",
-      "hashPath": "glmnet.0.7.0.nupkg.sha512"
-    },
-    "GLSLangSharp/0.4.10": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-he/xPNInhPh0c4UxBRItlOkPGDfB+HiVgHNw9C0HUg+mxw6B7+S1lt5nVDVhfa0zTu2s80wr41LTL9SLsAJxnA==",
-      "path": "glslangsharp/0.4.10",
-      "hashPath": "glslangsharp.0.4.10.nupkg.sha512"
     },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "type": "package",
@@ -378,13 +278,6 @@
       "sha512": "sha512-KVSkMFNpYwh/+xiZgP2ABqJTyJN6hH1a5SMfeIALou3aAqaSWzKuTMQOXuWzbJL1mPF7JxiNjmbvlnupEHPNSg==",
       "path": "opentk.windowing.graphicslibraryframework/5.0.0-pre.6",
       "hashPath": "opentk.windowing.graphicslibraryframework.5.0.0-pre.6.nupkg.sha512"
-    },
-    "SixLabors.ImageSharp/1.0.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-H2rPiEr2ddBOltOuqRYhpLBAsQXDAhbzMMhhuksnBG2oefup1MXMchALe7yYkKJksNbtxbZHKeM6dn/68I75qw==",
-      "path": "sixlabors.imagesharp/1.0.4",
-      "hashPath": "sixlabors.imagesharp.1.0.4.nupkg.sha512"
     },
     "System.Drawing.Common/6.0.0": {
       "type": "package",

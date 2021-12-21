@@ -1,43 +1,53 @@
 ﻿using System;
 using OpenTK.Graphics.OpenGL;
-using OpenTK.Graphics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using PixelFormat = OpenTK.Graphics.OpenGLES1.PixelFormat;
+using System.IO;
+using PixelFormat = System.Drawing.Imaging.PixelFormat;
+
 namespace OpenGL_CSharp
 {
-    public class Texture
+    class Texture
     {
-       public readonly OpenTK.Graphics.TextureHandle texture; //定义纹理变量 生成一个空纹理
-        public static Texture LoadFromFile(string path)
+        public static OpenTK.Graphics.TextureHandle LoadTexture(string path, TextureUnit unit)
         {
-            OpenTK.Graphics.TextureHandle texture = GL.GenTexture();
-            GL.BindTexture(TextureTarget.Texture2d, texture); //绑定纹理类型
-            GL.ActiveTexture(TextureUnit.Texture0); //绑定一个纹理槽位
-            
-            //LoadTexture
-            using (var image = new Bitmap(path)) //声明一个返回类型为var的变量，将引入进来的纹理给到他
+            if (!File.Exists(path))
             {
-                image.RotateFlip(RotateFlipType.RotateNoneFlipY); //垂直翻转纹理
-       
-                //将位图锁定到系统中
-                var data = image.LockBits(
-                    new Rectangle(0, 0, image.Width, image.Height),
-                    ImageLockMode.ReadOnly,
-                    System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-                Console.WriteLine(data);
+                Console.WriteLine("error");
             }
+
+            OpenTK.Graphics.TextureHandle id = GL.GenTexture();
+            GL.ActiveTexture(unit);
+            GL.BindTexture(TextureTarget.Texture2d, id);
+
+            Bitmap bitmap = new Bitmap(path);
+            bitmap.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            BitmapData data = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadOnly,
+                PixelFormat.Format32bppArgb);
             
-            GL.GenerateTextureMipmap(texture);//生成mipmap
-            Console.WriteLine("image");
-            return new Texture();
+            GL.TexImage2D(TextureTarget.Texture2d, 0, (int)InternalFormat.Rgba, data.Width, data.Height, 0,
+                OpenTK.Graphics.OpenGL.PixelFormat.Rgba, PixelType.Byte, data.Scan0);
+            
+            //设置纹理的循环模式
+            GL.TexParameterf(TextureTarget.Texture2d, TextureParameterName.TextureWrapS, (int) TextureWrapMode.Repeat);
+            GL.TexParameterf(TextureTarget.Texture2d, TextureParameterName.TextureWrapT, (int) TextureWrapMode.Repeat);
+            
+            //设置纹理的滤波模式
+            GL.TexParameterf(TextureTarget.Texture2d, TextureParameterName.TextureMinFilter,
+                (int) TextureMinFilter.Linear);
+            GL.TexParameterf(TextureTarget.Texture2d, TextureParameterName.TextureMagFilter,
+                (int) TextureMinFilter.Linear);
+            GL.GenerateMipmap(TextureTarget.Texture2d);//生成mipmap
+            
+            bitmap.UnlockBits(data); //释放
+            return id;
         }
 
-        public void Use(TextureUnit unit)
+        public static void OnUniformTexture(Shader shader,OpenTK.Graphics.TextureHandle texture,string uniformName,int TextureUnit)
         {
-           GL.ActiveTexture((unit));
-           GL.BindTexture(TextureTarget.Texture2d,texture);
+            GL.ActiveTexture((OpenTK.Graphics.OpenGL.TextureUnit)TextureUnit);
+            GL.BindTexture(TextureTarget.Texture2d,texture);
+            GL.Uniform1i(GL.GetUniformLocation(shader.shaderProgram,uniformName),TextureUnit);
         }
     }
 }
-
