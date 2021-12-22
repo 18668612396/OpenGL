@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/Nc+Ee/i5GEll/kZ1rVP0/pc6kwdaBmGiVkjD1o35Vefb2/FqGuW/HTN138RzEpT9Dl1AnGu347VoyX0PeBdxg==",
+  "dgSpecHash": "vXt1efaywJTaWjMmENZm2FMWW3ISDl2ISv0k5Sx3Yb9WkniwhYShBIxL3uwEaTCyH0au+XQL7p/rh9DW+QNAIw==",
   "success": true,
-  "projectFilePath": "E:\\GitHub\\OpenGL\\Work\\OpenGL_CSharp\\OpenGL_CSharp\\OpenGL_CSharp.csproj",
+  "projectFilePath": "D:\\GitHub\\OpenGL\\Work\\OpenGL_CSharp\\OpenGL_CSharp\\OpenGL_CSharp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\opentk\\5.0.0-pre.6\\opentk.5.0.0-pre.6.nupkg.sha512",
@@ -16,8 +16,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.common\\5.0.0-pre.6\\opentk.windowing.common.5.0.0-pre.6.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.desktop\\5.0.0-pre.6\\opentk.windowing.desktop.5.0.0-pre.6.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\5.0.0-pre.6\\opentk.windowing.graphicslibraryframework.5.0.0-pre.6.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

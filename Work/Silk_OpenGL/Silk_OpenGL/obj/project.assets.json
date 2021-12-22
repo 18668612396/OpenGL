@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net5.0": {
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -56,10 +56,10 @@
           "System.Runtime.CompilerServices.Unsafe": "4.7.0"
         },
         "compile": {
-          "lib/net6.0/Silk.NET.Core.dll": {}
+          "lib/net5.0/Silk.NET.Core.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Silk.NET.Core.dll": {}
+          "lib/net5.0/Silk.NET.Core.dll": {}
         }
       },
       "Silk.NET.GLFW/2.11.0": {
@@ -200,7 +200,8 @@
         "type": "package",
         "dependencies": {
           "Silk.NET.Windowing.Common": "2.11.0",
-          "Silk.NET.Windowing.Glfw": "2.11.0"
+          "Silk.NET.Windowing.Glfw": "2.11.0",
+          "Silk.NET.Windowing.Sdl": "2.11.0"
         }
       },
       "Silk.NET.Windowing.Common/2.11.0": {
@@ -236,10 +237,19 @@
           "Silk.NET.Windowing.Common": "2.11.0"
         },
         "compile": {
-          "lib/net6.0/Silk.NET.Windowing.Sdl.dll": {}
+          "lib/net5.0/Silk.NET.Windowing.Sdl.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Silk.NET.Windowing.Sdl.dll": {}
+          "lib/net5.0/Silk.NET.Windowing.Sdl.dll": {}
+        }
+      },
+      "SixLabors.ImageSharp/1.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
         }
       },
       "System.Buffers/4.5.1": {
@@ -793,6 +803,30 @@
         "silkdotnet_v3.png"
       ]
     },
+    "SixLabors.ImageSharp/1.0.4": {
+      "sha512": "H2rPiEr2ddBOltOuqRYhpLBAsQXDAhbzMMhhuksnBG2oefup1MXMchALe7yYkKJksNbtxbZHKeM6dn/68I75qw==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/SixLabors.ImageSharp.dll",
+        "lib/net472/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.xml",
+        "lib/netstandard1.3/SixLabors.ImageSharp.dll",
+        "lib/netstandard1.3/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.0/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.0/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.1/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.1/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.1.0.4.nupkg.sha512",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.nuspec"
+      ]
+    },
     "System.Buffers/4.5.1": {
       "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
       "type": "package",
@@ -974,42 +1008,36 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net5.0": [
       "Silk.NET >= 2.11.0",
-      "Silk.NET.Windowing.Common >= 2.11.0"
+      "Silk.NET.Windowing.Common >= 2.11.0",
+      "SixLabors.ImageSharp >= 1.0.4"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\Silk_OpenGL.csproj",
+      "projectUniqueName": "D:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\Silk_OpenGL.csproj",
       "projectName": "Silk_OpenGL",
-      "projectPath": "E:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\Silk_OpenGL.csproj",
+      "projectPath": "D:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\Silk_OpenGL.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\obj\\",
+      "outputPath": "D:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {}
         }
       },
@@ -1020,8 +1048,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "dependencies": {
           "Silk.NET": {
             "target": "Package",
@@ -1030,6 +1058,10 @@
           "Silk.NET.Windowing.Common": {
             "target": "Package",
             "version": "[2.11.0, )"
+          },
+          "SixLabors.ImageSharp": {
+            "target": "Package",
+            "version": "[1.0.4, )"
           }
         },
         "imports": [
@@ -1047,7 +1079,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

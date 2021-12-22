@@ -62,7 +62,7 @@ namespace OpenGL_CSharp
             GL.VertexAttribPointer(15, 2, VertexAttribPointerType.Float, false, 8 * sizeof(float), 6 * sizeof(float));
             GL.EnableVertexAttribArray(15);
 
-            var rotation = Matrix4d.CreateRotationZ(MathHelper.DegreesToRadians(90.0f));
+            
             
 
             

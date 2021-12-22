@@ -8,7 +8,7 @@ namespace Silk_OpenGL
     {
         private static IWindow inputForWindow;
 
-        public void Main(IWindow window)
+        public void LoadInput(IWindow window)
         {
             inputForWindow = window;
             //设置外设输入

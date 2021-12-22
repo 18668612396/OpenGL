@@ -7,18 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c429014c-da23-4836-9d07-d7e21b7b1e84" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpenGL_CSharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpenGL_CSharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Silk_OpenGL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Silk_OpenGL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/Silk_OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/Silk_OpenGL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/Silk_OpenGL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/Silk_OpenGL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/ref/Silk_OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/ref/Silk_OpenGL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/ref/Silk_OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/ref/Silk_OpenGL.dll" afterDir="false" />
-    </list>
+    <list default="true" id="c429014c-da23-4836-9d07-d7e21b7b1e84" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +25,15 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29a328843bdc4762af89c8fdc084c4d68f5778/394/FileStream.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7760b7e529842eaa902ba064a8e3659ae00/83/ebe94382/GameWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/032f1cd709624c56a3f7c664f723f3a76ec68/46/717e5187/SafeNativeMethods.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7760b7e529842eaa902ba064a8e3659ae00/f4/6798fb5c/NativeWindowSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/032f1cd709624c56a3f7c664f723f3a76ec68/6A/Gdiplus.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7760b7e529842eaa902ba064a8e3659ae00/15/9925970f/GameWindowSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7760b7e529842eaa902ba064a8e3659ae00/30/964532f6/NativeWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19fae2d4f8594cc8af6fef0181a5dc2eab578/eb/16a3e20a/ColorConverter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29a328843bdc4762af89c8fdc084c4d68f5778/CD/ReadOnlySpan.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="22X2DCnobriA63vxtIQ6KMy9UVF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -95,8 +92,8 @@
       <workItem from="1640060844828" duration="4980000" />
       <workItem from="1640065932483" duration="114000" />
       <workItem from="1640066099590" duration="6021000" />
-      <workItem from="1640072230606" duration="16786000" />
-      <workItem from="1640112868097" duration="2305000" />
+      <workItem from="1640072230606" duration="18797000" />
+      <workItem from="1640153748662" duration="262000" />
     </task>
     <servers />
   </component>

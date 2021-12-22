@@ -9,7 +9,8 @@
       "Silk_OpenGL/1.0.0": {
         "dependencies": {
           "Silk.NET": "2.11.0",
-          "Silk.NET.Windowing.Common": "2.11.0"
+          "Silk.NET.Windowing.Common": "2.11.0",
+          "SixLabors.ImageSharp": "1.0.4"
         },
         "runtime": {
           "Silk_OpenGL.dll": {}
@@ -229,6 +230,14 @@
           }
         }
       },
+      "SixLabors.ImageSharp/1.0.4": {
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {},
       "System.Memory/4.5.3": {},
       "System.Numerics.Vectors/4.5.0": {},
@@ -429,6 +438,13 @@
       "sha512": "sha512-2h1Xdl+zqvF88va5Qn/k6w2A1qYCGNRpYZeTfa9xSi6QDQ3U0ZE2vQQGsuoiI5XOYI545Cmk7FgRTg7iOFmheQ==",
       "path": "silk.net.windowing.sdl/2.11.0",
       "hashPath": "silk.net.windowing.sdl.2.11.0.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H2rPiEr2ddBOltOuqRYhpLBAsQXDAhbzMMhhuksnBG2oefup1MXMchALe7yYkKJksNbtxbZHKeM6dn/68I75qw==",
+      "path": "sixlabors.imagesharp/1.0.4",
+      "hashPath": "sixlabors.imagesharp.1.0.4.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

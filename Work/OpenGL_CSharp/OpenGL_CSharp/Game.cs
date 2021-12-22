@@ -71,8 +71,8 @@ namespace OpenGL_CSharp
             #region Texture
             string[] texturePath =
             {
-                "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/container.bmp",
-                "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/Ground_01.bmp"
+                "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/container.bmp",
+                "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Texture/Ground_01.bmp"
             };
             texture[0] = Texture.LoadTexture(texturePath[0], TextureUnit.Texture0);
             texture[1] = Texture.LoadTexture(texturePath[1], TextureUnit.Texture1);
@@ -97,8 +97,8 @@ namespace OpenGL_CSharp
             GL.BufferData(BufferTargetARB.ArrayBuffer, vertices.Length * sizeof(float), vertices[0],
                 BufferUsageARB.StaticDraw);
 
-            var vertexShaderPath = "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.vert";
-            var fragmentShaderPath = "E:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.frag";
+            var vertexShaderPath = "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/vertexShader.vert";
+            var fragmentShaderPath = "D:/GitHub/OpenGL/Work/OpenGL_CSharp/OpenGL_CSharp/Shader/fragmentShader.frag";
 
             OnShader = new Shader(vertexShaderPath, fragmentShaderPath);
             //清除后的背景颜色，我只想让他调用一次，所以放在OnLoad里使用
@@ -120,7 +120,7 @@ namespace OpenGL_CSharp
         //每一帧进行调用 可用于存放一些跟着渲染一起更新的数据
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
-            
+            GL.Uniform3d(GL.GetUniformLocation(OnShader.shaderProgram,"test"),0.2,0.3,0.5);
             GL.Clear(ClearBufferMask.ColorBufferBit); //clear缓冲区
             // for (int i = 0; i < texture.Length; i++)
             // {

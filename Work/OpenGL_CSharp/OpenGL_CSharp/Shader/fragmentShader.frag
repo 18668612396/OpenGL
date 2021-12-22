@@ -2,12 +2,10 @@
 out vec4 FragColor;
 in vec4 vertexColor;
 in vec2 uv;
-uniform sampler2D diffuseTex;
-uniform sampler2D specularTex;
 
+uniform vec3 test;
 void main()
 {
- vec3 var_diffuseTex = texture(diffuseTex,uv).rgb;
- vec3 var_specularTex = texture(specularTex,uv).rgb;
- FragColor = vec4(var_diffuseTex.rgb,1);
+
+ FragColor = vec4(test,1);
 }

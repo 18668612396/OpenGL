@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i/qOxEJ/d1W1l9H8215Gu8V5CmL7OPVV6RsRVR23dtLKRNbWp6Qsd/kkRVBGcD63dUBeaGbYNX0O6G5LurqmvQ==",
+  "dgSpecHash": "G8UhzL95DrUJBvdnF/BappQnfK/SZ31yzivlKf6FpDrgEtQ5unHwjPh4OgnH/pcVYbfxy+lXxl6l9VD4RryupQ==",
   "success": true,
-  "projectFilePath": "E:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\Silk_OpenGL.csproj",
+  "projectFilePath": "D:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\Silk_OpenGL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
@@ -24,6 +24,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\silk.net.windowing.common\\2.11.0\\silk.net.windowing.common.2.11.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\silk.net.windowing.glfw\\2.11.0\\silk.net.windowing.glfw.2.11.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\silk.net.windowing.sdl\\2.11.0\\silk.net.windowing.sdl.2.11.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
