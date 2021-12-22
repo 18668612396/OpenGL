@@ -49,6 +49,10 @@
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[1.0.4, )"
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             }
           },
           "imports": [

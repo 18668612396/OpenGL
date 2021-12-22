@@ -2,6 +2,7 @@
 using Silk.NET.OpenGL;
 using System.IO;
 using System.Numerics;
+using System.Runtime;
 
 
 namespace Silk_OpenGL
@@ -68,16 +69,18 @@ namespace Silk_OpenGL
         
        public unsafe void Transform(GL Gl)
         {
-            int modelLocation = Gl.GetUniformLocation(program, "ModelMatrix");
+            int modelLocation = Gl.GetUniformLocation(program, "Matrix_ObjectToWorld");
+            Matrix4x4 model = Matrix4x4.CreateFromAxisAngle(Vector3.UnitX, -40f);
+            Gl.UniformMatrix4(modelLocation,1,false,(float*) &model);
             
-            Matrix4x4 Model = Matrix4x4.CreateTranslation(-0.5f  ,0,0);
-            Gl.UniformMatrix4(modelLocation,1,false,(float*) &Model);
+            int viewLocation = Gl.GetUniformLocation(program, "Matrix_WorldToView");
+            Matrix4x4 view = Matrix4x4.CreateTranslation(0f,0f,-3.0f);
+            Gl.UniformMatrix4(viewLocation,1,false,(float*) &view);
             
-            int viewLocation = Gl.GetUniformLocation(program, "RotationMatrix");
-            Matrix4x4 rotation = Matrix4x4.CreateRotationZ(45f);
-            Gl.UniformMatrix4(viewLocation,1,false,(float*) &rotation);
+            int viewProjection = Gl.GetUniformLocation(program, "Matrix_ViewToProjection");
+            Matrix4x4 projection = Matrix4x4.CreatePerspectiveFieldOfView(45.0f, 400 / 300, 0.1f, 100.0f);
+            Gl.UniformMatrix4(viewProjection,1,false,(float*) &projection);
 
-            
         }
     }
 }

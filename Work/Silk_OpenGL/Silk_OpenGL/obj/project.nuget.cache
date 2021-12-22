@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "G8UhzL95DrUJBvdnF/BappQnfK/SZ31yzivlKf6FpDrgEtQ5unHwjPh4OgnH/pcVYbfxy+lXxl6l9VD4RryupQ==",
+  "dgSpecHash": "wOO8trDOnBQthabiswWSZqliurE3FvAmDt0e/AmF0VjmxgIveRQ1ScYA0FG1xlm9+nOsfNhNta/IZN1ELwDwRw==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\OpenGL\\Work\\Silk_OpenGL\\Silk_OpenGL\\Silk_OpenGL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.1.1\\microsoft.extensions.dependencymodel.3.1.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\silk.net\\2.11.0\\silk.net.2.11.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\silk.net.core\\2.11.0\\silk.net.core.2.11.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\silk.net.glfw\\2.11.0\\silk.net.glfw.2.11.0.nupkg.sha512",
@@ -28,6 +30,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.0\\system.runtime.compilerservices.unsafe.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\4.7.0\\system.text.json.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\ultz.native.glfw\\3.3.2.1\\ultz.native.glfw.3.3.2.1.nupkg.sha512",
