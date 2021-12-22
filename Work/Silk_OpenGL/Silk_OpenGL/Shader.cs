@@ -70,7 +70,7 @@ namespace Silk_OpenGL
        public unsafe void Transform(GL Gl)
         {
             int modelLocation = Gl.GetUniformLocation(program, "Matrix_ObjectToWorld");
-            Matrix4x4 model = Matrix4x4.CreateFromAxisAngle(Vector3.UnitX,MathF.PI / 180f * -55);
+            Matrix4x4 model = Matrix4x4.CreateFromAxisAngle(Vector3.UnitX,MathF.PI / 180f * -55f);//PI / 180f 为弧度转角度方法
             Gl.UniformMatrix4(modelLocation,1,false,(float*) &model);
             
             int viewLocation = Gl.GetUniformLocation(program, "Matrix_WorldToView");
