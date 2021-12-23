@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
@@ -12,6 +12,10 @@
       <PackageReference Include="Silk.NET.Windowing.Common" Version="2.11.0" />
       <PackageReference Include="SixLabors.ImageSharp" Version="1.0.4" />
       <PackageReference Include="System.Runtime" Version="4.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\Ground_01.bmp" />
     </ItemGroup>
 
 </Project>

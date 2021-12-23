@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
+    "net6.0": {
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -74,10 +74,10 @@
           "System.Runtime.CompilerServices.Unsafe": "4.7.0"
         },
         "compile": {
-          "lib/net5.0/Silk.NET.Core.dll": {}
+          "lib/net6.0/Silk.NET.Core.dll": {}
         },
         "runtime": {
-          "lib/net5.0/Silk.NET.Core.dll": {}
+          "lib/net6.0/Silk.NET.Core.dll": {}
         }
       },
       "Silk.NET.GLFW/2.11.0": {
@@ -218,8 +218,7 @@
         "type": "package",
         "dependencies": {
           "Silk.NET.Windowing.Common": "2.11.0",
-          "Silk.NET.Windowing.Glfw": "2.11.0",
-          "Silk.NET.Windowing.Sdl": "2.11.0"
+          "Silk.NET.Windowing.Glfw": "2.11.0"
         }
       },
       "Silk.NET.Windowing.Common/2.11.0": {
@@ -255,10 +254,10 @@
           "Silk.NET.Windowing.Common": "2.11.0"
         },
         "compile": {
-          "lib/net5.0/Silk.NET.Windowing.Sdl.dll": {}
+          "lib/net6.0/Silk.NET.Windowing.Sdl.dll": {}
         },
         "runtime": {
-          "lib/net5.0/Silk.NET.Windowing.Sdl.dll": {}
+          "lib/net6.0/Silk.NET.Windowing.Sdl.dll": {}
         }
       },
       "SixLabors.ImageSharp/1.0.4": {
@@ -1158,7 +1157,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0": [
+    "net6.0": [
       "Silk.NET >= 2.11.0",
       "Silk.NET.Windowing.Common >= 2.11.0",
       "SixLabors.ImageSharp >= 1.0.4",
@@ -1181,14 +1180,14 @@
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net6.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "projectReferences": {}
         }
       },
@@ -1199,8 +1198,8 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "net6.0": {
+        "targetAlias": "net6.0",
         "dependencies": {
           "Silk.NET": {
             "target": "Package",
@@ -1229,12 +1228,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.13, 5.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
