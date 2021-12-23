@@ -31,7 +31,6 @@ namespace Silk_OpenGL
             Camera_Right = Vector3.Normalize(Vector3.Cross(Camera_Direction, new Vector3(0.0f, 1.0f, 0.0f)));
             Camera_Up = Vector3.Normalize(Vector3.Cross(Camera_Right,Camera_Direction));
 
-            // LookAtMatrix = Matrix4x4.CreateLookAt(Camera_Direction, Camera_Right, new Vector3(0.0f, 1.0f, 0.0f));
             GetViewMatrix = Matrix4x4.CreateLookAt(Camera_Position, Camera_Position + Camera_Direction, new Vector3(0.0f, 1.0f, 0.0f));
             Gl.Uniform3(Gl.GetUniformLocation(Shader.program,"_WorldSpaceCameraPos"),Camera_Position);
             

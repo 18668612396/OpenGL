@@ -44,12 +44,15 @@ namespace Silk_OpenGL
 
         private static void OnUpdate(double obj)
         {
+
             Shader.UniformTexture2D(Gl, Texture01, "diffuse", 0);
             Shader.UniformTexture2D(Gl, Texture02, "specular", 1);
             Shader.UpdataGlobalValue(Gl);
             Camera.UpdataCamera(Gl,window);
             Transform.UpdataTransform(Gl);
+            // Buffer.Disepose(Gl);
             //Here all updates to the program should be done.
+            
         }
 
 
@@ -59,6 +62,7 @@ namespace Silk_OpenGL
             Shader.Run(Gl);
             //绘制内容
             Buffer.Draw(Gl);
+
         }
 
         private static void OnClose()

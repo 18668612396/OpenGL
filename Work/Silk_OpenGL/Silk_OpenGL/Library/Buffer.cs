@@ -103,7 +103,9 @@ namespace Silk_OpenGL
         {
             Gl.DeleteBuffer(Vbo);
             Gl.DeleteBuffer(Ebo);
+            Gl.DeleteVertexArray(Vao);
             Gl.DeleteBuffer(Vao);
+            
         }
     }
 }
