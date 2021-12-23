@@ -2,18 +2,15 @@
 using Silk.NET.OpenGL;
 using System.IO;
 using System.Numerics;
-using System.Runtime;
-using System.Text.RegularExpressions;
-
 
 namespace Silk_OpenGL
 {
     public class Shader
     {
         public static uint program;
-
         public static unsafe void LoadShader(GL Gl)
         {
+
             //获取顶点着色器的代码段
             var shaderSource = File.ReadAllText("D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl");
             var vertexBegin = shaderSource.IndexOf("#VERTEX");
@@ -44,7 +41,6 @@ namespace Silk_OpenGL
             Gl.DetachShader(program, fragmentShader); //释放Shader
             Gl.DeleteShader(vertexShader); //释放顶点着色器
             Gl.DeleteShader(fragmentShader); //释放片元着色器
-
             //绑定相关的
             Gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 8 * sizeof(float), (void*) 0);
             Gl.EnableVertexAttribArray(0);
@@ -54,6 +50,13 @@ namespace Silk_OpenGL
             Gl.EnableVertexAttribArray(2);
         }
 
+        public static void UpdataGlobalValue(GL Gl)
+        {
+
+            Gl.Uniform3(Gl.GetUniformLocation(program,"LightPos"),new Vector3(10.0f,10.0f,10.0f));
+        }
+        
+        
         public static void Run(GL Gl)
         {
             Gl.UseProgram(program);

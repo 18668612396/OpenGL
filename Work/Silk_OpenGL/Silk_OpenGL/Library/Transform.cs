@@ -11,11 +11,11 @@ namespace Silk_OpenGL
         public unsafe static void UpdataTransform(GL Gl)
         {
             var modelLocation = Gl.GetUniformLocation(Shader.program, "Matrix_ObjectToWorld");
-            Matrix4x4 model = Matrix4x4.CreateFromAxisAngle(Vector3.UnitY,Radians(180));//PI / 180f 为弧度转角度方法
+            //这里一定要把三个变换都乘上 哪怕没有数值
+            Matrix4x4 model =  Matrix4x4.CreateTranslation(new Vector3(0.0f,0.0f,0.0f)) * Matrix4x4.Identity * Matrix4x4.CreateScale(1.0f) ;
             Gl.UniformMatrix4(modelLocation,1,false,(float*) &model);
             
             var viewLocation = Gl.GetUniformLocation(Shader.program, "Matrix_WorldToView");
-            // Matrix4x4 view = Matrix4x4.CreateTranslation(new Vector3(0.0f, 0.0f, -3.0f));
             Matrix4x4 view = Camera.GetViewMatrix;
             Gl.UniformMatrix4(viewLocation,1,false,(float*) &view);
             
