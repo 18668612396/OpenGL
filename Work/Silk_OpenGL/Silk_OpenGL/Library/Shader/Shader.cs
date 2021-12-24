@@ -7,12 +7,11 @@ namespace Silk_OpenGL
 {
     public class Shader
     {
-        public static uint program;
-        public static unsafe void LoadShader(GL Gl)
+        public  uint program;
+        public  unsafe Shader(GL Gl,string path)
         {
-
             //获取顶点着色器的代码段
-            var shaderSource = File.ReadAllText("E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl");
+            var shaderSource = File.ReadAllText(path);
             var vertexBegin = shaderSource.IndexOf("#VERTEX");
             var vertexEnd = shaderSource.IndexOf("#VERTEND");
             var vertexSource = shaderSource.Substring(vertexBegin + 7, vertexEnd - 7);
@@ -50,30 +49,28 @@ namespace Silk_OpenGL
             Gl.EnableVertexAttribArray(2);
         }
 
-        public static void UpdataGlobalValue(GL Gl)
+        
+        public  void UpdataGlobalValue(GL Gl)
         {
-
             Gl.Uniform3(Gl.GetUniformLocation(program,"LightPos"),new Vector3(10.0f,10.0f,10.0f));
         }
-        
-        
-        public static void Run(GL Gl)
+        public  void Run(GL Gl)
         {
             Gl.UseProgram(program);
         }
 
-        public static void Dispose(GL Gl)
+        public  void Dispose(GL Gl)
         {
             Gl.DeleteProgram(program);
         }
 
-        public static void SetUniform(GL Gl, string name, float value)
+        public  void SetUniform(GL Gl, string name, float value)
         {
             var location = Gl.GetUniformLocation(program, name);
             Gl.Uniform1(location, value);
         }
 
-        public static void UniformTexture2D(GL Gl, uint texture, string name, int textureUnit)
+        public  void UniformTexture2D(GL Gl, uint texture, string name, int textureUnit)
         {
             var location = Gl.GetUniformLocation(program, name);
             Gl.ActiveTexture(TextureUnit.Texture0 + textureUnit);

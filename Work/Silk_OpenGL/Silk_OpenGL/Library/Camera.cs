@@ -10,34 +10,36 @@ using Silk.NET.Windowing;
 
 namespace Silk_OpenGL
 {
-    public static class Camera
+    public class Camera
     {
-        private static Vector3 Camera_Position = Vector3.Zero;
-        private static Vector3 Camera_Direction;
-        private static Vector3 Camera_Right;
-        private static Vector3 Camera_Up;
-        private static Vector2 EulerAngles;
-        private static Vector3 Camera_Move;
-        public static float FieldOfView = 45.0f;
-        public static Vector2 ClippingPlanes = new Vector2(0.1f, 100.0f);
-        public static Matrix4x4 GetViewMatrix;
-        public static void UpdataCamera(GL Gl, IWindow window)
+        private Vector3 Camera_Position = Vector3.Zero;
+        private Vector3 Camera_Direction;
+        private Vector3 Camera_Right;
+        private Vector3 Camera_Up;
+        private Vector2 EulerAngles;
+        private Vector3 Camera_Move;
+        public float FieldOfView = 45.0f;
+        public Vector2 ClippingPlanes = new Vector2(0.1f, 100.0f);
+        public Matrix4x4 GetViewMatrix;
+
+        public void UpdataCamera(GL Gl, IWindow window, uint ShaderProgram)
         {
             // Camera_Position = new Vector3(0.0f, 0.0f, -3.0f);
             Camera_Direction.X = MathF.Cos(Radians(EulerAngles.X)) * MathF.Cos(Radians(EulerAngles.Y));
             Camera_Direction.Y = MathF.Sin(Radians(EulerAngles.X));
             Camera_Direction.Z = MathF.Cos(Radians(EulerAngles.X)) * MathF.Sin(Radians(EulerAngles.Y));
-            Camera_Direction = Vector3.Normalize(Camera_Direction);//
+            Camera_Direction = Vector3.Normalize(Camera_Direction); //
             Camera_Right = Vector3.Normalize(Vector3.Cross(Camera_Direction, new Vector3(0.0f, 1.0f, 0.0f)));
-            Camera_Up = Vector3.Normalize(Vector3.Cross(Camera_Right,Camera_Direction));
+            Camera_Up = Vector3.Normalize(Vector3.Cross(Camera_Right, Camera_Direction));
 
-            GetViewMatrix = Matrix4x4.CreateLookAt(Camera_Position, Camera_Position + Camera_Direction, new Vector3(0.0f, 1.0f, 0.0f));
-            Gl.Uniform3(Gl.GetUniformLocation(Shader.program,"_WorldSpaceCameraPos"),Camera_Position);
-            
+            GetViewMatrix = Matrix4x4.CreateLookAt(Camera_Position, Camera_Position + Camera_Direction,
+                new Vector3(0.0f, 1.0f, 0.0f));
+            Gl.Uniform3(Gl.GetUniformLocation(ShaderProgram, "_WorldSpaceCameraPos"), Camera_Position);
+
             UpdataCameraTransform(window);
         }
 
-        private static void UpdataCameraTransform(IWindow window)
+        private void UpdataCameraTransform(IWindow window)
         {
             IInputContext input = window.CreateInput();
             IKeyboard keyboard = input.Keyboards.FirstOrDefault();
@@ -50,11 +52,15 @@ namespace Silk_OpenGL
             Camera_Position += Camera_Up * Camera_Move.Y;
         }
 
-        private static Vector2 LastMousePosition;
-        private static unsafe void OnMouseMove(IMouse mouse, Vector2 position)
+        private Vector2 LastMousePosition;
+
+        private unsafe void OnMouseMove(IMouse mouse, Vector2 position)
         {
             var lookSensitivity = 0.1f;
-            if (LastMousePosition == default) { LastMousePosition = position; }
+            if (LastMousePosition == default)
+            {
+                LastMousePosition = position;
+            }
             else
             {
                 var xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
@@ -67,10 +73,11 @@ namespace Silk_OpenGL
                 EulerAngles.X = Math.Clamp(EulerAngles.X, -89.0f, 89.0f);
             }
         }
-        private static float CameraSpeed = 0.05f;
-        private static void OnKeyboardDown(IKeyboard keyboard)
-        {
 
+        private float CameraSpeed = 0.05f;
+
+        private void OnKeyboardDown(IKeyboard keyboard)
+        {
             if (keyboard.IsKeyPressed(Key.W))
             {
                 Camera_Move.Z = CameraSpeed;
@@ -83,7 +90,7 @@ namespace Silk_OpenGL
             {
                 Camera_Move.Z = 0;
             }
-            
+
             if (keyboard.IsKeyPressed(Key.D))
             {
                 Camera_Move.X = CameraSpeed;
@@ -96,7 +103,7 @@ namespace Silk_OpenGL
             {
                 Camera_Move.X = 0;
             }
-            
+
             if (keyboard.IsKeyPressed(Key.E))
             {
                 Camera_Move.Y = CameraSpeed;
@@ -109,9 +116,9 @@ namespace Silk_OpenGL
             {
                 Camera_Move.Y = 0;
             }
-            
         }
-        private static float Radians(float value)
+
+        private float Radians(float value)
         {
             return MathF.PI / 180 * value;
         }
