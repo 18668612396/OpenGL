@@ -8,12 +8,13 @@ using Window = Silk.NET.Windowing.Window;
 
 namespace Silk_OpenGL
 {
-    class GameView  
+    class SceneView  
     {
         private static IWindow window;
         private static InputContext Oninput = new InputContext();
         private static GL Gl;
-
+        //实例化灯光
+        private static Light DirectionLight;
         public static void Run()
         {
             var options = WindowOptions.Default; //创建窗口实例
@@ -35,6 +36,8 @@ namespace Silk_OpenGL
         {
             Gl = GL.GetApi(window); //调用API 在window内
             //-------------------------------------------------------
+            DirectionLight = new Light(Vector3.Zero, new Vector3(0.5f, 0.3f, 0.0f), Vector3.One);
+            
             Buffer.LoadVertex(Gl); //加载VertexBuffer:Vbo Ebo Vao等顶点输入GPU相关内容
             Shader.LoadShader(Gl); //加载shader内容
             Texture01 = Texture.LoadTexture(Gl, "E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2.png");
@@ -44,18 +47,13 @@ namespace Silk_OpenGL
 
         private static void OnUpdate(double obj)
         {
-
             Shader.UniformTexture2D(Gl, Texture01, "diffuse", 0);
             Shader.UniformTexture2D(Gl, Texture02, "specular", 1);
-            Shader.UpdataGlobalValue(Gl);
+            Light.UpdateUniformValue(Gl);
             Camera.UpdataCamera(Gl,window);
             Transform.UpdataTransform(Gl);
             // Buffer.Disepose(Gl);
             //Here all updates to the program should be done.
-            var light = new Light().Directional();
-            
-            
-
         }
 
 

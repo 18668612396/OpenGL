@@ -41,8 +41,13 @@ namespace Silk_OpenGL
         {
             IInputContext input = window.CreateInput();
             IKeyboard keyboard = input.Keyboards.FirstOrDefault();
-            input.Mice[0].Cursor.CursorMode = CursorMode.Raw;
-            input.Mice[0].MouseMove += OnMouseMove;
+
+            for (int i = 0; i < input.Mice.Count; i++)
+            {
+                input.Mice[0].Cursor.CursorMode = CursorMode.Raw;
+                input.Mice[0].MouseMove += OnMouseMove;
+            }
+
             OnKeyboardDown(keyboard);
 
             Camera_Position += Camera_Direction * Camera_Move.Z;

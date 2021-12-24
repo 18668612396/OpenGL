@@ -50,12 +50,7 @@ namespace Silk_OpenGL
             Gl.EnableVertexAttribArray(2);
         }
 
-        public static void UpdataGlobalValue(GL Gl)
-        {
-
-            Gl.Uniform3(Gl.GetUniformLocation(program,"LightPos"),new Vector3(10.0f,10.0f,10.0f));
-        }
-        
+  
         
         public static void Run(GL Gl)
         {

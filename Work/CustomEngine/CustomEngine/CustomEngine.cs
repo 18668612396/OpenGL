@@ -6,7 +6,11 @@ public partial class CustomEngine : Form
 {
     public CustomEngine()
     {
-        GameView.Run();
-        InitializeComponent();
+        SceneView.Run();
+        // InitializeComponent();
+    }
+    private void button1_Click(object sender, EventArgs e)
+    {
+        SceneView.Run();
     }
 }

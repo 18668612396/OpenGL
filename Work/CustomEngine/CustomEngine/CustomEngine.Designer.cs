@@ -28,8 +28,20 @@ partial class CustomEngine
     /// </summary>
     private void InitializeComponent()
     {
+        this.OpenRenderView = new System.Windows.Forms.Button();
+        this.SuspendLayout();
+        // 
+        // button1
+        // 
+        this.OpenRenderView.Location = new System.Drawing.Point(317, 229);
+        this.OpenRenderView.Name = "button1";
+        this.OpenRenderView.Size = new System.Drawing.Size(269, 169);
+        this.OpenRenderView.TabIndex = 0;
+        this.OpenRenderView.Text = "打开渲染窗口";
+        this.OpenRenderView.UseVisualStyleBackColor = true;
+        this.OpenRenderView.Click += new System.EventHandler(this.button1_Click);   
         
-        
+        this.Controls.Add(this.OpenRenderView);
         
         //主窗口部分的代码
         this.components = new System.ComponentModel.Container();
@@ -37,6 +49,6 @@ partial class CustomEngine
         this.ClientSize = new System.Drawing.Size(800, 450);
         this.Text = "CustomEngine";
     }
-
+    private System.Windows.Forms.Button OpenRenderView;
     #endregion
 }

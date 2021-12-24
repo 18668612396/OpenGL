@@ -16,7 +16,6 @@ void main()
 {
     worldPos = (Matrix_ObjectToWorld * vec4(vPos.xyz, 1.0)).xyz;
     gl_Position = Matrix_ViewToHClip * Matrix_WorldToView * Matrix_ObjectToWorld * vec4(vPos.xyz, 1.0);
-    
     uv = texcoord;
     worldNormal =mat3(transpose(inverse(Matrix_ObjectToWorld))) * vNormal;
 }
@@ -33,6 +32,7 @@ uniform sampler2D diffuse;
 uniform sampler2D specular;
 uniform vec3 LightPos;
 uniform vec3 _WorldSpaceCameraPos;
+uniform vec3 LightColor;
 void main()
 {
     //Value
@@ -50,11 +50,9 @@ void main()
     vec3 ambientColor = vec3(0.3f,0.3f,0.3f) * var_diffuse.rgb ;
     vec3 diffuseColor = var_diffuse.rgb * NdotL;
     vec3 specularColor = diffuseColor * pow(VdotR,64);
-    
-    
-    
-    FragColor = vec4(ambientColor + diffuseColor + specularColor, uv);
-//    FragColor = vec4(VdotR,VdotR,VdotR,1);
+
+//    FragColor = vec4(ambientColor + diffuseColor + specularColor, uv);
+    FragColor = vec4(NdotL,NdotL,NdotL,1);
 }
 #FRAGEND
 

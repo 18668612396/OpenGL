@@ -24,9 +24,11 @@ namespace Silk_OpenGL
             Gl.UniformMatrix4(projectionLocation,1,false,(float*) &projection);
         }
         
-        private static float Radians(float value)
+        public static float Radians(float value)
         {
             return MathF.PI / 180 * value;
         }
+
+        public static Quaternion Rotation { get; set; } = Quaternion.Identity;
     }
 }

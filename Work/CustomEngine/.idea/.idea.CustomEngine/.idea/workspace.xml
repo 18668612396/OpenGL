@@ -8,64 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9e121a-37a9-4985-8d1b-e663ca164f7f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CustomEngine/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/CustomEngine.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/CustomEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/CustomEngine.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/CustomEngine.csproj.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/ref/CustomEngine.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/CustomEngine.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/CustomEngine.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/CustomEngine.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/apphost.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/ref/CustomEngine.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomEngine/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Library/GameView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Unity3D" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Library/Light.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Library/Light.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Library/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Library/Shader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Library/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Library/Texture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/Silk_OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/Silk_OpenGL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/Silk_OpenGL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/Silk_OpenGL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/ref/Silk_OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/bin/Debug/net6.0/ref/Silk_OpenGL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/Silk_OpenGL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/ref/Silk_OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Debug/net6.0/ref/Silk_OpenGL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Silk_OpenGL.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Silk_OpenGL.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Silk_OpenGL.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/Silk_OpenGL.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Silk_OpenGL/Silk_OpenGL/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CustomEngine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CustomEngine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/Assets/NewShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/Assets/NewShader.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/CustomEngine.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/CustomEngine.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/CustomEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/CustomEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/Library/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/Library/Camera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/Library/GameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/Library/SceneView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/Library/Light.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/Library/Light.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/Library/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/Library/Shader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/Library/Transform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/Library/Transform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/CustomEngine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/ref/CustomEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/bin/Debug/net6.0-windows/ref/CustomEngine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/CustomEngine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/ref/CustomEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomEngine/obj/Debug/net6.0-windows/ref/CustomEngine.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1640302359581</updated>
       <workItem from="1640302366842" duration="369000" />
-      <workItem from="1640302948769" duration="1353000" />
+      <workItem from="1640302948769" duration="6757000" />
     </task>
     <servers />
   </component>
