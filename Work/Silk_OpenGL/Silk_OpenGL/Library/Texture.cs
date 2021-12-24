@@ -33,7 +33,7 @@ namespace Silk_OpenGL
             //Generating the opengl handle;
             texture = Gl.GenTexture();
             Gl.BindTexture(TextureTarget.Texture2D, texture);
-
+       
             //Setting the data of a texture.
             Gl.TexImage2D(TextureTarget.Texture2D, 0, (int) InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba,
                 PixelType.UnsignedByte, data);
@@ -42,9 +42,9 @@ namespace Silk_OpenGL
             Gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int) GLEnum.Repeat);
             Gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int) GLEnum.Linear);
             Gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int) GLEnum.Linear);
-
-            //Generating mipmaps.
             Gl.GenerateMipmap(TextureTarget.Texture2D);
+            //Generating mipmaps.
+
         }
 
         public static void Dispose(GL Gl)

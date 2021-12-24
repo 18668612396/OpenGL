@@ -79,3 +79,4 @@ D:\GitHub\OpenGL\Work\Silk_OpenGL\Silk_OpenGL\obj\Debug\net6.0\Silk_OpenGL.dll
 D:\GitHub\OpenGL\Work\Silk_OpenGL\Silk_OpenGL\obj\Debug\net6.0\ref\Silk_OpenGL.dll
 D:\GitHub\OpenGL\Work\Silk_OpenGL\Silk_OpenGL\obj\Debug\net6.0\Silk_OpenGL.pdb
 D:\GitHub\OpenGL\Work\Silk_OpenGL\Silk_OpenGL\obj\Debug\net6.0\Silk_OpenGL.genruntimeconfig.cache
+E:\GitHub\OpenGL\Work\Silk_OpenGL\Silk_OpenGL\bin\Debug\net6.0\SixLabors.ImageSharp.dll
