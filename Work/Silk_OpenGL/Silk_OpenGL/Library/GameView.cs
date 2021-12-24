@@ -37,7 +37,7 @@ namespace Silk_OpenGL
             Gl = GL.GetApi(window); //调用API 在window内
             //-------------------------------------------------------
             Buffer.LoadVertex(Gl); //加载VertexBuffer:Vbo Ebo Vao等顶点输入GPU相关内容
-            OnShader.Loading(Gl);
+            RenderPipeline.ShaderLoading(Gl);
             Texture01 = Texture.LoadTexture(Gl, "D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2.png");
             Texture02 = Texture.LoadTexture(Gl, "D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2_specular.png");
             Gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -46,22 +46,18 @@ namespace Silk_OpenGL
         private static void OnUpdate(double obj)
         {
 
-            OnShader.UpdateShader(Gl,Texture01,Texture02);
+            RenderPipeline.UpdateShader(Gl,Texture01,Texture02);
             OnCamera.UpdataCamera(Gl,window,new Shader(Gl,"D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl").program);
             OnTransform.UpdataTransform(Gl,new Shader(Gl,"D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl").program,OnCamera);
-            // Buffer.Disepose(Gl);
             //Here all updates to the program should be done.
             var light = new Light().Directional();
-            
-            
-
         }
 
 
         private static void OnRender(double obj)
         {
             //使用Shader
-            OnShader.DrawShader(Gl);
+            RenderPipeline.DrawShader(Gl);
             //绘制内容
             Buffer.Draw(Gl);
 

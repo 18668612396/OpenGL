@@ -23,7 +23,6 @@ namespace Silk_OpenGL
             Matrix4x4 projection = Matrix4x4.CreatePerspectiveFieldOfView(Radians(camera.FieldOfView), 400 / 300,camera.ClippingPlanes.X,camera.ClippingPlanes.Y);
             Gl.UniformMatrix4(projectionLocation,1,false,(float*) &projection);
         }
-        
         private static float Radians(float value)
         {
             return MathF.PI / 180 * value;
