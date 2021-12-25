@@ -15,6 +15,8 @@ namespace Silk_OpenGL
         private static GL Gl;
         private static Camera OnCamera = new Camera();
         private static Transform OnTransform = new Transform();
+
+        private static Model OnModel;
         public static void Run(string[] args)
         {
             var options = WindowOptions.Default; //创建窗口实例
@@ -34,21 +36,25 @@ namespace Silk_OpenGL
 
         private static void OnLoad()
         {
+
+            
             Gl = GL.GetApi(window); //调用API 在window内
             //-------------------------------------------------------
             Buffer.LoadVertex(Gl); //加载VertexBuffer:Vbo Ebo Vao等顶点输入GPU相关内容
             RenderPipeline.ShaderLoading(Gl);
-            Texture01 = Texture.LoadTexture(Gl, "D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2.png");
-            Texture02 = Texture.LoadTexture(Gl, "D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2_specular.png");
+            Texture01 = Texture.LoadTexture(Gl, "E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2.png");
+            Texture02 = Texture.LoadTexture(Gl, "E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2_specular.png");
             Gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+
+            OnModel = new Model(Gl,"E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/nanosuit.obj");
         }
 
         private static void OnUpdate(double obj)
         {
 
             RenderPipeline.UpdateShader(Gl,Texture01,Texture02);
-            OnCamera.UpdataCamera(Gl,window,new Shader(Gl,"D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl").program);
-            OnTransform.UpdataTransform(Gl,new Shader(Gl,"D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl").program,OnCamera);
+            OnCamera.UpdataCamera(Gl,window,new Shader(Gl,"E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl").program);
+            OnTransform.UpdataTransform(Gl,new Shader(Gl,"E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl").program,OnCamera);
             //Here all updates to the program should be done.
             var light = new Light().Directional();
         }
@@ -61,6 +67,9 @@ namespace Silk_OpenGL
             //绘制内容
             Buffer.Draw(Gl);
 
+            
+  
+            
         }
 
         private static void OnClose()

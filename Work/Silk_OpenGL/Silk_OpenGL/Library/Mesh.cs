@@ -1,36 +1,40 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
-using Assimp;
+using Assimp.Unmanaged;
 using Silk.NET.OpenGL;
-using System;
 
 namespace Silk_OpenGL
 {
-    public struct Vertex
+   public  struct Vertex
     {
-        private Vector3 Position;
-        private Vector3 Normal;
-        private Vector3 Texcoord;
+        public  IntPtr Position;
+        public  IntPtr Normal;
+        public  AiMeshTextureCoordinateArray Texcoord;
     };
 
     public class Mesh
     {
         public List<Vertex> Vretices;
-        public List<int> Indices;
+        public List<IntPtr> Indices;
 
         private uint Vao, Vbo, Ebo;
 
-        public Mesh(GL Gl, List<Vertex> vertices, List<int> indices)
+        public Mesh(GL Gl, List<Vertex> vertices, List<IntPtr> indices)
         {
             this.Vretices = vertices;
             this.Indices = indices;
-
-
             SetupMesh(Gl);
+            
         }
 
         private unsafe void SetupMesh(GL Gl)
         {
+            List<Vertex> list = new List<Vertex>();
+
+
+            
+            
             Vao = Gl.GenVertexArray();
             Gl.BindVertexArray(Vao);
 
@@ -58,7 +62,8 @@ namespace Silk_OpenGL
 
         public void Draw(Shader shader)
         {
-            
         }
     }
+
+
 }
