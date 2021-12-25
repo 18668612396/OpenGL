@@ -46,7 +46,7 @@ namespace Silk_OpenGL
             Texture02 = Texture.LoadTexture(Gl, "E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2_specular.png");
             Gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
-            OnModel = new Model(Gl,"E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/nanosuit.obj");
+            OnModel = new Model(Gl,"E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/Box.obj");
         }
 
         private static void OnUpdate(double obj)

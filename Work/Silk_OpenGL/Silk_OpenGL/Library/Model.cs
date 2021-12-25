@@ -11,26 +11,24 @@ namespace Silk_OpenGL
 {
     public class Model
     {
+        private List<Mesh> meshes = new List<Mesh>();
+
         public Model(GL Gl, string path)
         {
-            List<Mesh> meshes;
-
             LoadFromFile(Gl, path);
         }
-
-        private Scene m_model;
-        public string directory;
 
         private static void LoadFromFile(GL Gl, string path)
         {
             //设置处理方式
-            var postProcessSteps = PostProcessSteps.GenerateSmoothNormals |
-                                   PostProcessSteps.CalculateTangentSpace |
-                                   PostProcessSteps.Triangulate |
-                                   PostProcessSteps.FlipUVs;
+            const PostProcessSteps postProcessSteps = PostProcessSteps.GenerateSmoothNormals |
+                                                      PostProcessSteps.CalculateTangentSpace |
+                                                      PostProcessSteps.Triangulate |
+                                                      PostProcessSteps.FlipUVs;
             var import = new AssimpContext(); //实例化ImportContext
-            Scene scene = import.ImportFile(path, postProcessSteps); //导入模型
 
+            var scene = import.ImportFile(path, postProcessSteps); //导入模型
+ 
             processNode(Gl, scene.RootNode, scene);
         }
 
@@ -38,47 +36,73 @@ namespace Silk_OpenGL
         private static void processNode(GL Gl, Node node, Scene scene)
         {
             //遍历RootNode中的ChildNode
-            foreach (var nodeChild in node.Children)
+            foreach (var nodeChild in scene.RootNode.Children)
             {
                 Console.WriteLine(nodeChild.Name);
+                
+            }
 
-                if (nodeChild.HasMeshes) //如果ChildNode中存在Mesh 那么我就遍历他
+        }
+
+        private static Mesh processMesh(GL Gl, AiMesh mesh, Scene scene)
+        {
+            
+            var vertices = new List<Vertex>();
+            var indices = new List<IntPtr>();
+            var tempVertices = new Vertex();
+            //遍历RootNode中的ChildNode
+            foreach (var nodeChild in scene.RootNode.Children)
+            {
+                Console.WriteLine(nodeChild.Name);
+                if (!nodeChild.HasMeshes) continue;//如果node里不存在mesh 就跳过下一行代码
+                //遍历ChildNode中的Mesh
+                foreach (var index in nodeChild.MeshIndices)
                 {
-                    //遍历ChildNode中的Mesh
-                    foreach (var index in nodeChild.MeshIndices)
+                    var curMesh = scene.Meshes[index]; //获得当前的mesh
+                    //遍历Mesh中面的数据
+                    foreach (var face in curMesh.Faces)
                     {
-                        Assimp.Mesh mesh = scene.Meshes[index]; //获得当前的mesh
-                        // Console.WriteLine(index.ToString());
-
-                        //遍历Mesh中的面
-                        foreach (var face in mesh.Faces)
+                        for (int i = 0; i < face.IndexCount; i++)
                         {
-                            foreach (var faceIndex in face.Indices)
+                            var indice = face.Indices[i];
+
+                            //读取顶点色
+                            if (curMesh.HasVertexColors(0))
                             {
-                                
-                                if (mesh.HasVertexColors(0))
-                                {
-                                    Color4D vertexColor = mesh.VertexColorChannels[0][faceIndex];
-                                 
-                                }
-
-                                if (mesh.HasNormals)
-                                {
-                                    Vector3D normal = mesh.Normals[faceIndex];
-                                    Console.WriteLine(normal);
-                                }
-
-                                if (mesh.HasTextureCoords(0))
-                                {
-                                    Vector3D uvw = mesh.TextureCoordinateChannels[0][faceIndex];
-                                    
-                                }
-                                Vector3D pos = mesh.Vertices[faceIndex];
-                               
+                                var vertexColor = curMesh.VertexColorChannels[0][indice];
+                                tempVertices.Color = vertexColor;
                             }
+
+                            //读取顶点法线
+                            if (curMesh.HasNormals)
+                            {
+                                var normal = curMesh.Normals[indice];
+                                tempVertices.Normal = normal;
+                            }
+
+                            //读取顶点UV坐标
+                            if (curMesh.HasTextureCoords(0))
+                            {
+                                var uvw = curMesh.TextureCoordinateChannels[0][indice];
+                                tempVertices.Texcoord = uvw;
+                            }
+
+                            //读取顶点坐标
+                            var pos = curMesh.Vertices[indice];
+                            tempVertices.Position = pos;
+                            vertices.Add(tempVertices);
                         }
                     }
                 }
+            }
+            return new Mesh(Gl,vertices,indices);
+        }
+
+        public void Draw(GL Gl)
+        {
+            for (var i = 0; i < meshes.Count; i++)
+            {
+                meshes[i].Draw(Gl);
             }
         }
     }
