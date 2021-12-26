@@ -12,7 +12,7 @@ namespace Silk_OpenGL
 {
     public class Camera
     {
-        private Vector3 Camera_Position = Vector3.Zero;
+        private Vector3 Camera_Position = new Vector3(-5.63f,0.1337f,-0.5f);
         private Vector3 Camera_Direction;
         private Vector3 Camera_Right;
         private Vector3 Camera_Up;
@@ -25,6 +25,7 @@ namespace Silk_OpenGL
         public void UpdataCamera(GL Gl, IWindow window, uint ShaderProgram)
         {
             // Camera_Position = new Vector3(0.0f, 0.0f, -3.0f);
+            // Console.WriteLine(Camera_Position);
             Camera_Direction.X = MathF.Cos(Radians(EulerAngles.X)) * MathF.Cos(Radians(EulerAngles.Y));
             Camera_Direction.Y = MathF.Sin(Radians(EulerAngles.X));
             Camera_Direction.Z = MathF.Cos(Radians(EulerAngles.X)) * MathF.Sin(Radians(EulerAngles.Y));

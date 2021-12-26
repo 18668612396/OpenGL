@@ -18,34 +18,39 @@ namespace Silk_OpenGL
 
     public class Mesh
     {
-        public List<Vertex> vertices = new List<Vertex>();
+        public Vertex vertices;
         public List<int> indices = new List<int>();
 
         private uint Vao, Vbo, Ebo;
 
+         private static float[] test =
+        {
+        // positions          // normals           // texture coords
+        -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f,  0.0f,
+      
+        };
         public Mesh(GL Gl, float[] vertices)
         {
-    
-            for (int m = 0; m < vertices.Length / 3; m++)
+            Vertex temp = new Vertex();
+            for (int i = 0; i < vertices.Length / 3; i++)
             {
-                Vertex temp = new Vertex();
-                for (int i = 0; i < vertices.Length; i++)
-                {
-                    temp.Position.X = vertices[i];
-                    temp.Position.Y = vertices[i + 1];
-                    temp.Position.Z = vertices[i + 2];
-                    i = i + 2;
-                }
+                // Console.WriteLine(i);
+                temp.Position.X = vertices[i];
+                temp.Position.Y = vertices[i + 1];
+                temp.Position.Z = vertices[i + 2];
                 this.vertices.Add(temp);
-                Console.WriteLine(this.vertices[m].Position);
+                // Console.WriteLine(temp.Position);
             }
+
+            test = vertices;
+            SetupMesh(Gl);
         }
 
         public Mesh(GL Gl, List<Vertex> vertices, List<int> indices)
         {
             this.vertices = vertices;
             this.indices = indices;
-
+        
             SetupMesh(Gl);
         }
 
@@ -58,25 +63,34 @@ namespace Silk_OpenGL
 
             Vbo = Gl.GenBuffer();
             Gl.BindBuffer(BufferTargetARB.ArrayBuffer, Vbo);
-            Gl.BufferData((GLEnum) BufferTargetARB.ArrayBuffer, (uint) vertices.Count * sizeof(float), vertices[0],
+            
+            GL.BufferData(BufferTargetARB.ArrayBuffer, (IntPtr)total, IntPtr.Zero
+                , BufferUsageARB.StaticDraw);
+            
+            GL.BufferSubData(BufferTargetARB.ArrayBuffer, (IntPtr)(0), (IntPtr)vertSize, ModelInfo.Verts.ToArray());
+            
+            
+            
+            Gl.BufferData((GLEnum) BufferTargetARB.ArrayBuffer,(uint) (sizeof(Vertex) * vertices.Count), vertices[0],
                 BufferUsageARB.StaticDraw); //顶点的数据
+            // Ebo = Gl.GenBuffer();
+            // Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo);
+            // Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (uint) (sizeof(int) * indices.Count), indices[0],
+            //     BufferUsageARB.StaticDraw);
 
-            Ebo = Gl.GenBuffer();
-            Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo);
-            Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (uint) (sizeof(int) * indices.Count), indices[0],
-                BufferUsageARB.StaticDraw);
-
-            Gl.VertexAttribPointer(0, 3, GLEnum.Float, false, (uint) sizeof(Vertex), (void*) 0);
-            Gl.EnableVertexAttribArray(0);
-
+            // Gl.VertexAttribPointer(0, 3, GLEnum.Float, false,0, (void*) 0);
+            // Gl.EnableVertexAttribArray(0);
+            // Console.WriteLine((uint) sizeof(Vertex));
             // Gl.VertexAttribPointer(1, 3, GLEnum.Float, false, (uint) sizeof(Vertex), (void*) (3 * sizeof(float)));
             // Gl.EnableVertexAttribArray(1);
-            //
+            // //
             // Gl.VertexAttribPointer(2, 2, GLEnum.Float, false, (uint) sizeof(Vertex), (void*) (6 * sizeof(float)));
             // Gl.EnableVertexAttribArray(2);
-            //
-            // Gl.VertexAttribPointer(3, 4, GLEnum.Float, false, (uint) sizeof(Vertex), (void*) (6 * sizeof(float)));
-            // Gl.EnableVertexAttribArray(3);
+
+            // Gl.BufferData((GLEnum) BufferTargetARB.ArrayBuffer, (uint) test.Length * sizeof(float), test[0],
+            //     BufferUsageARB.StaticDraw); //顶点的数据
+            
+            Console.WriteLine(vertices[0].Position);
 
             Gl.BindVertexArray(0); //解绑
         }
@@ -88,11 +102,11 @@ namespace Silk_OpenGL
                 Gl.Clear(ClearBufferMask.ColorBufferBit); //绘制开始前 先清理上一帧的屏幕颜色buffer
                 Gl.Clear(ClearBufferMask.DepthBufferBit); //绘制开始前 先清理上一帧的屏幕深度buffer
                 Gl.BindVertexArray(Vao); //绑定Vao
-                Gl.DrawElements(PrimitiveType.Triangles, (uint) indices.Count, DrawElementsType.UnsignedInt,
-                    null); //以索引方式绘制
-                Gl.BindVertexArray(0); //释放
-                Gl.ActiveTexture(TextureUnit.Texture0); //释放
-                // Gl.DrawArrays((PrimitiveType) PrimitiveType.Triangles, 0, 36);
+                // Gl.DrawElements(PrimitiveType.Triangles, (uint) indices.Count, DrawElementsType.UnsignedInt,
+                // null); //以索引方式绘制
+                Gl.DrawArrays((PrimitiveType) PrimitiveType.Triangles, 0, 36);
+                // Gl.BindVertexArray(0); //释放
+                // Gl.ActiveTexture(TextureUnit.Texture0); //释放
             }
         }
     }

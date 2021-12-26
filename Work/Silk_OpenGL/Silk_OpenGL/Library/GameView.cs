@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
 using Silk.NET.Input;
 using Silk.NET.Maths;
@@ -16,7 +17,9 @@ namespace Silk_OpenGL
         private static Camera OnCamera = new Camera();
         private static Transform OnTransform = new Transform();
 
-        private static Model OnModel;
+
+
+        // private static Model OnModel;
         public static void Run(string[] args)
         {
             var options = WindowOptions.Default; //创建窗口实例
@@ -34,19 +37,70 @@ namespace Silk_OpenGL
         private static uint Texture01;
         private static uint Texture02;
 
+        private static float[] vertices =
+        {
+            // positions         
+            -0.5f, -0.5f, -0.5f, 
+            0.5f, -0.5f, -0.5f, 
+            0.5f,  0.5f, -0.5f, 
+            0.5f,  0.5f, -0.5f, 
+            -0.5f,  0.5f, -0.5f, 
+            -0.5f, -0.5f, -0.5f, 
+
+            -0.5f, -0.5f,  0.5f, 
+            0.5f, -0.5f,  0.5f, 
+            0.5f,  0.5f,  0.5f, 
+            0.5f,  0.5f,  0.5f, 
+            -0.5f,  0.5f,  0.5f, 
+            -0.5f, -0.5f,  0.5f, 
+
+            -0.5f,  0.5f,  0.5f, 
+            -0.5f,  0.5f, -0.5f, 
+            -0.5f, -0.5f, -0.5f, 
+            -0.5f, -0.5f, -0.5f, 
+            -0.5f, -0.5f,  0.5f, 
+            -0.5f,  0.5f,  0.5f, 
+
+            0.5f,  0.5f,  0.5f, 
+            0.5f,  0.5f, -0.5f, 
+            0.5f, -0.5f, -0.5f, 
+            0.5f, -0.5f, -0.5f, 
+            0.5f, -0.5f,  0.5f, 
+            0.5f,  0.5f,  0.5f, 
+
+            -0.5f, -0.5f, -0.5f, 
+            0.5f, -0.5f, -0.5f, 
+            0.5f, -0.5f,  0.5f, 
+            0.5f, -0.5f,  0.5f, 
+            -0.5f, -0.5f,  0.5f, 
+            -0.5f, -0.5f, -0.5f, 
+
+            -0.5f,  0.5f, -0.5f, 
+            0.5f,  0.5f, -0.5f, 
+            0.5f,  0.5f,  0.5f, 
+            0.5f,  0.5f,  0.5f, 
+            -0.5f,  0.5f,  0.5f, 
+            -0.5f,  0.5f, -0.5f, 
+        };
+
+        private static Mesh cube;
         private static void OnLoad()
         {
 
+
+
+
             
             Gl = GL.GetApi(window); //调用API 在window内
+            cube = new Mesh(Gl,vertices);
             //-------------------------------------------------------
-            Buffer.LoadVertex(Gl); //加载VertexBuffer:Vbo Ebo Vao等顶点输入GPU相关内容
+            // Buffer.LoadVertex(Gl); //加载VertexBuffer:Vbo Ebo Vao等顶点输入GPU相关内容
             RenderPipeline.ShaderLoading(Gl);
             Texture01 = Texture.LoadTexture(Gl, "E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2.png");
             Texture02 = Texture.LoadTexture(Gl, "E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2_specular.png");
             Gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
-            OnModel = new Model(Gl,"E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/Box.obj");
+            // OnModel = new Model(Gl,"E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/Box.obj");
         }
 
         private static void OnUpdate(double obj)
@@ -65,8 +119,8 @@ namespace Silk_OpenGL
             //使用Shader
             RenderPipeline.DrawShader(Gl);
             //绘制内容
-            Buffer.Draw(Gl);
-
+            // Buffer.Draw(Gl);
+            cube.Draw(Gl);
             
   
             

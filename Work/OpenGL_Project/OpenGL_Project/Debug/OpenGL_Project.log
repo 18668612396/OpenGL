@@ -1,12 +1,4 @@
-﻿  Main.cpp
-E:\GitHub\OpenGL\Work\OpenGL_Project\OpenGL_Project\Main.cpp(118,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-E:\GitHub\OpenGL\Work\OpenGL_Project\OpenGL_Project\Main.cpp(119,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-E:\GitHub\OpenGL\Work\OpenGL_Project\OpenGL_Project\Main.cpp(123,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-E:\GitHub\OpenGL\Work\OpenGL_Project\OpenGL_Project\Main.cpp(124,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-E:\GitHub\OpenGL\Work\OpenGL_Project\OpenGL_Project\Main.cpp(285,129): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-E:\GitHub\OpenGL\Work\OpenGL_Project\OpenGL_Project\Main.cpp(285,110): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-E:\GitHub\OpenGL\Work\OpenGL_Project\OpenGL_Project\Main.cpp(285,92): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-E:\GitHub\OpenGL\Work\OpenGL_Project\OpenGL_Project\Main.cpp(285,73): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+﻿  LINK : 没有找到 E:\GitHub\OpenGL\Work\OpenGL_Project\Debug\OpenGL_Project.exe 或上一个增量链接没有生成它；正在执行完全链接
 LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
 LINK : warning LNK4217: 符号“___glewActiveTexture”(在“ glew32s.lib(glew.obj)”中定义)已由“Mesh.obj”(函数“"public: void __thiscall Mesh::Draw(class Shader *)" (?Draw@Mesh@@QAEXPAVShader@@@Z)”中)导入
 LINK : warning LNK4217: 符号“___glewBindBuffer”(在“ glew32s.lib(glew.obj)”中定义)已由“Mesh.obj”(函数“"private: void __thiscall Mesh::setupMesh(void)" (?setupMesh@Mesh@@AAEXXZ)”中)导入
