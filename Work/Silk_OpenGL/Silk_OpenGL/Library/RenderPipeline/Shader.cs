@@ -41,7 +41,7 @@ namespace Silk_OpenGL
             Gl.DeleteShader(vertexShader); //释放顶点着色器
             Gl.DeleteShader(fragmentShader); //释放片元着色器
             //绑定相关的
-            Gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), (void*) 0);
+            Gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 8 * sizeof(float), (void*) 0);
             Gl.EnableVertexAttribArray(0);
             Gl.VertexAttribPointer(1, 3, GLEnum.Float, false, 8 * sizeof(float), (void*) (3 * sizeof(float)));
             Gl.EnableVertexAttribArray(1);
