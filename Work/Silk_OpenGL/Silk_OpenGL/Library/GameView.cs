@@ -37,11 +37,14 @@ namespace Silk_OpenGL
         private static uint Texture01;
         private static uint Texture02;
 
+
         private static void OnLoad()
         {
 
 
             Gl = GL.GetApi(window); //调用API 在window内
+            
+            Assets.Loading(Gl);
             //-------------------------------------------------------
             Buffer.LoadVertex(Gl); //加载VertexBuffer:Vbo Ebo Vao等顶点输入GPU相关内容
             RenderPipeline.ShaderLoading(Gl);

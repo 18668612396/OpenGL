@@ -8,9 +8,10 @@ using SixLabors.ImageSharp.Processing.Processors.Transforms;
 
 namespace Silk_OpenGL
 {
-    public static class Texture
+    public class Texture
     {
-        private static uint texture;
+        
+        public static uint texture;
         public static unsafe uint LoadTexture(GL Gl, string path)
         {
             var image = (Image<Rgba32>) Image.Load(path);
