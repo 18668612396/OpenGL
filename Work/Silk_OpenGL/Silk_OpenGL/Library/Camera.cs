@@ -12,7 +12,7 @@ namespace Silk_OpenGL
 {
     public class Camera
     {
-        private Vector3 Camera_Position = new Vector3(-5.63f,0.1337f,-0.5f);
+        public Vector3 Camera_Position = new Vector3(-5.63f,0.1337f,-0.5f);
         private Vector3 Camera_Direction;
         private Vector3 Camera_Right;
         private Vector3 Camera_Up;
@@ -22,7 +22,7 @@ namespace Silk_OpenGL
         public Vector2 ClippingPlanes = new Vector2(0.1f, 100.0f);
         public Matrix4x4 GetViewMatrix;
 
-        public void UpdataCamera(GL Gl, IWindow window, uint ShaderProgram)
+        public void UpdataCamera(GL Gl, IWindow window)
         {
             // Camera_Position = new Vector3(0.0f, 0.0f, -3.0f);
             // Console.WriteLine(Camera_Position);
@@ -35,7 +35,7 @@ namespace Silk_OpenGL
 
             GetViewMatrix = Matrix4x4.CreateLookAt(Camera_Position, Camera_Position + Camera_Direction,
                 new Vector3(0.0f, 1.0f, 0.0f));
-            Gl.Uniform3(Gl.GetUniformLocation(ShaderProgram, "_WorldSpaceCameraPos"), Camera_Position);
+
 
             UpdataCameraTransform(window);
         }
@@ -119,7 +119,7 @@ namespace Silk_OpenGL
             }
         }
 
-        private float Radians(float value)
+        public float Radians(float value)
         {
             return MathF.PI / 180 * value;
         }

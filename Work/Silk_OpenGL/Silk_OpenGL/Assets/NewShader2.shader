@@ -22,8 +22,8 @@ void main()
 }
     #VERTEND
     //======================================================================================================================
-    #FRAGMENT
-    #version 330 core
+#FRAGMENT
+#version 330 core
 out vec4 FragColor;
 in vec3 worldNormal;
 in vec4 wordView;
@@ -53,7 +53,7 @@ void main()
 
 
 
-    FragColor = vec4(ambientColor + diffuseColor + specularColor, uv);
+    FragColor = vec4(1,1,1,1);
 
 }
     #FRAGEND

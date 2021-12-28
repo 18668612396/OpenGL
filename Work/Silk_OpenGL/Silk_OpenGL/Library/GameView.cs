@@ -15,10 +15,8 @@ namespace Silk_OpenGL
         private static InputContext Oninput = new InputContext();
         private static GL Gl;
         private static Camera OnCamera = new Camera();
-        private static Transform OnTransform = new Transform();
 
-
-
+        private static Shader[] OnShader;
         // private static Model OnModel;
         public static void Run(string[] args)
         {
@@ -33,49 +31,31 @@ namespace Silk_OpenGL
             window.Closing += OnClose; //设置Close
             window.Run(); //运行窗口
         }
-
         private static uint Texture01;
         private static uint Texture02;
-
-
         private static void OnLoad()
         {
-
-
             Gl = GL.GetApi(window); //调用API 在window内
-            
-            Assets.Loading(Gl);
+            Assets.Loading(Gl);//读取资源
             //-------------------------------------------------------
             Buffer.LoadVertex(Gl); //加载VertexBuffer:Vbo Ebo Vao等顶点输入GPU相关内容
             RenderPipeline.ShaderLoading(Gl);
-            Texture01 = Texture.LoadTexture(Gl, "D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2.png");
-            Texture02 = Texture.LoadTexture(Gl, "D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2_specular.png");
+            Texture01 = Texture.LoadTexture(Gl, "E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2.png");
+            Texture02 = Texture.LoadTexture(Gl, "E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/container2_specular.png");
             Gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-
         }
-
         private static void OnUpdate(double obj)
         {
-
-            RenderPipeline.UpdateShader(Gl,Texture01,Texture02);
-            OnCamera.UpdataCamera(Gl,window,new Shader(Gl,"D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl").program);
-            OnTransform.UpdataTransform(Gl,new Shader(Gl,"D:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.glsl").program,OnCamera);
-            //Here all updates to the program should be done.
-            var light = new Light().Directional();
+            RenderPipeline.UpdateShader(Gl,OnCamera,Texture01,Texture02);
+            OnCamera.UpdataCamera(Gl,window);
         }
-
-
         private static void OnRender(double obj)
         {
             //使用Shader
             RenderPipeline.DrawShader(Gl);
             //绘制内容
             Buffer.Draw(Gl);
-            
-  
-            
         }
-
         private static void OnClose()
         {
             // OnShader.Dispose(Gl);

@@ -48,9 +48,12 @@ namespace Silk_OpenGL
 
         }
 
+        
         public static void Dispose(GL Gl)
         {
             Gl.DeleteTexture(texture);
         }
+        
+        
     }
 }

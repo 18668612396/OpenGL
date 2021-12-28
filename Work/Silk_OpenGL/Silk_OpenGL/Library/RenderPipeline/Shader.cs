@@ -7,15 +7,16 @@ namespace Silk_OpenGL
 {
     public class Shader
     {
-        public  uint program;
-        public  unsafe Shader(GL Gl,string path)
+        public uint program;
+
+        public unsafe Shader(GL Gl, string path)
         {
             //获取顶点着色器的代码段
             var shaderSource = File.ReadAllText(path);
             var vertexBegin = shaderSource.IndexOf("#VERTEX");
             var vertexEnd = shaderSource.IndexOf("#VERTEND");
             var vertexSource = shaderSource.Substring(vertexBegin + 7, vertexEnd - 7);
-
+            Console.WriteLine(vertexSource);
             //获取片元着色器的代码段
             var fragmentBegin = shaderSource.IndexOf("#FRAGMENT");
             var fragmentEnd = shaderSource.IndexOf("#FRAGEND");
@@ -50,27 +51,32 @@ namespace Silk_OpenGL
         }
 
 
-        public  void UpdataGlobalValue(GL Gl)
+        public unsafe void UpdataGlobalValue(GL Gl, Camera OnCanera)
         {
-            Gl.Uniform3(Gl.GetUniformLocation(program,"LightPos"),new Vector3(10.0f,10.0f,10.0f));
+            //MVP变换
+            Matrix4x4 model = Matrix4x4.CreateTranslation(new Vector3(0.0f, 0.0f, 0.0f)) * Matrix4x4.Identity *
+                              Matrix4x4.CreateScale(1.0f); //这里一定要把三个变换都乘上 哪怕没有数值
+            Gl.UniformMatrix4(Gl.GetUniformLocation(program, "Matrix_ObjectToWorld"), 1, false, (float*) &model);
+            Matrix4x4 view = OnCanera.GetViewMatrix;
+            Gl.UniformMatrix4(Gl.GetUniformLocation(program, "Matrix_WorldToView"), 1, false, (float*) &view);
+            Matrix4x4 projection = Matrix4x4.CreatePerspectiveFieldOfView(OnCanera.Radians(OnCanera.FieldOfView),
+                400 / 300, OnCanera.ClippingPlanes.X, OnCanera.ClippingPlanes.Y);
+            Gl.UniformMatrix4(Gl.GetUniformLocation(program, "Matrix_ViewToHClip"), 1, false, (float*) &projection);
+
+            Gl.Uniform3(Gl.GetUniformLocation(program, "LightPos"), new Vector3(10.0f, 10.0f, 10.0f));
+            Gl.Uniform3(Gl.GetUniformLocation(program, "_WorldSpaceCameraPos"), OnCanera.Camera_Position);
         }
-        public  void Run(GL Gl)
+
+        public void Run(GL Gl)
         {
             Gl.UseProgram(program);
         }
 
-        public  void Dispose(GL Gl)
+        public void Dispose(GL Gl)
         {
             Gl.DeleteProgram(program);
         }
-
-        public  void SetUniform(GL Gl, string name, float value)
-        {
-            var location = Gl.GetUniformLocation(program, name);
-            Gl.Uniform1(location, value);
-        }
-
-        public  void UniformTexture2D(GL Gl, uint texture, string name, int textureUnit)
+        public void UniformTexture2D(GL Gl, uint texture, string name, int textureUnit)
         {
             var location = Gl.GetUniformLocation(program, name);
             Gl.ActiveTexture(TextureUnit.Texture0 + textureUnit);
