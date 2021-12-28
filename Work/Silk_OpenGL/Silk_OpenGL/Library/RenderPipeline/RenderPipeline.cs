@@ -5,7 +5,7 @@ namespace Silk_OpenGL
     public static class RenderPipeline
     {
         public static Shader shader;
-        private static int shaderIndex = 2;
+        private static int shaderIndex = 0;
         public static void ShaderLoading(GL Gl)
         {
             shader = new Shader(Gl,Assets.Shaders[shaderIndex].path); //加载shader内容

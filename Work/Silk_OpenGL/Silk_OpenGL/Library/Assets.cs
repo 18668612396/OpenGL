@@ -89,10 +89,10 @@ namespace Silk_OpenGL
 
                 if (extension == ".mat")
                 {
-                    Console.WriteLine(file.Name);
+                    // Console.WriteLine(file.Name);
                     //读取纹理坐标
                     
-                    Console.WriteLine(fileContent);
+                    // Console.WriteLine(fileContent);
                     
                 }
                 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
+using System.Text.RegularExpressions;
 using Silk.NET.Input;
 using Silk.NET.Maths;
 using Silk.NET.OpenGL;
@@ -35,6 +37,12 @@ namespace Silk_OpenGL
         private static uint Texture02;
         private static void OnLoad()
         {
+            var shaderSource = File.ReadAllText("E:/GitHub/OpenGL/Work/Silk_OpenGL/Silk_OpenGL/Assets/NewShader.shader");
+            Regex rg = new Regex("(?<=(" + "#VERTEX" + "))[.\\s\\S]*?(?=(" + "#VERTEND" + "))", RegexOptions.Multiline | RegexOptions.Singleline);
+            Console.WriteLine(rg.Match(shaderSource).Value);
+            
+            
+            
             Gl = GL.GetApi(window); //调用API 在window内
             Assets.Loading(Gl);//读取资源
             //-------------------------------------------------------

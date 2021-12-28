@@ -1,4 +1,13 @@
-﻿#VERTEX
+﻿Properties
+{
+    _MainTex ("Texture", 2D) = "white" {}
+}
+
+
+
+
+
+#VERTEX
 #version 330 core //Using version GLSL version 3.3
 layout (location = 0) in vec3 vPos;
 layout (location = 1) in vec3 vNormal;

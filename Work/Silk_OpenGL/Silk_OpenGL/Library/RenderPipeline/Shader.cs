@@ -2,6 +2,7 @@
 using Silk.NET.OpenGL;
 using System.IO;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace Silk_OpenGL
 {
@@ -13,15 +14,16 @@ namespace Silk_OpenGL
         {
             //获取顶点着色器的代码段
             var shaderSource = File.ReadAllText(path);
-            var vertexBegin = shaderSource.IndexOf("#VERTEX");
-            var vertexEnd = shaderSource.IndexOf("#VERTEND");
-            var vertexSource = shaderSource.Substring(vertexBegin + 7, vertexEnd - 7);
-            Console.WriteLine(vertexSource);
+            Regex vertexRegex = new Regex("(?<=(" + "#VERTEX" + "))[.\\s\\S]*?(?=(" + "#VERTEND" + "))",
+                RegexOptions.Multiline | RegexOptions.Singleline);
+            var vertexSource = vertexRegex.Match(shaderSource).Value;
+
             //获取片元着色器的代码段
-            var fragmentBegin = shaderSource.IndexOf("#FRAGMENT");
-            var fragmentEnd = shaderSource.IndexOf("#FRAGEND");
-            var fragmentSource = shaderSource.Substring(fragmentBegin + 9, fragmentEnd - fragmentBegin - 9);
-            //这个方法表明了 我从 （#FRAGMENT + 9）个字符串开始往后数(#FRAGEND - #FRAGMENT - 9)个字符
+            Regex fragmentRegex = new Regex("(?<=(" + "#FRAGMENT" + "))[.\\s\\S]*?(?=(" + "#FRAGEND" + "))",
+                RegexOptions.Multiline | RegexOptions.Singleline);
+            var fragmentSource = fragmentRegex.Match(shaderSource).Value;
+            ;
+
 
             var vertexShader = Gl.CreateShader(ShaderType.VertexShader); //创建Shadeer
             Gl.ShaderSource(vertexShader, vertexSource); //将Shader源代码放进shader内
@@ -76,6 +78,7 @@ namespace Silk_OpenGL
         {
             Gl.DeleteProgram(program);
         }
+
         public void UniformTexture2D(GL Gl, uint texture, string name, int textureUnit)
         {
             var location = Gl.GetUniformLocation(program, name);
